@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+	<meta content="no-cache" http-equiv="pragma">
+	<meta content="0" http-equiv="expires">
+	<meta content="telephone=no, address=no" name="format-detection">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+	<style type="text/css">
+		#frame{max-width: 640px;height: 100%;width: 100%;margin: 0 auto;}
+		#myCanvas,#Canvas2{display: block;position: absolute;left: 0;top: 0;}
+	</style>
+	<title>吃月饼</title>
+</head>
+<body>
+	<div style="display: none;">
+		<img src="img/medal-img1.png"/>
+		<img src="img/medal-img2.png"/>
+		<img src="img/medal-img3.png"/>
+	</div>
+	<div id="frame">
+		<div class="box1">
+			<canvas id="myCanvas" width="320" height="480" style="border: none;"></canvas>
+		</div>
+		<div class="box2">
+			<canvas id="Canvas2" width="320" height="480" style="border: none;"></canvas>
+		</div>
+	</div>
+	<script src="js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	function NoClickDelay(el) {
+	    this.element = typeof el == 'object' ? el: document.getElementById(el);      
+	    //if (window.Touch)  this.element.addEventListener('touchstart', this, false);
+	}
+	NoClickDelay.prototype = {
+	    handleEvent: function(e) {              
+	        switch (e.type) {                      
+	        case 'touchstart':
+	            this.onTouchStart(e);
+	            break;                      
+	        case 'touchmove':
+	            this.onTouchMove(e);
+	            break;                      
+	        case 'touchend':
+	            this.onTouchEnd(e);
+	            break;              
+	        }      
+	    },
+	    onTouchStart: function(e) {
+	        e.preventDefault(); this.moved = false;
+	        this.theTarget = document.elementFromPoint(e.targetTouches[0].clientX, e.targetTouches[0].clientY);              
+	        if (this.theTarget.nodeType == 3) this.theTarget = theTarget.parentNode;
+	        this.theTarget.className += ' pressed';
+	        this.element.addEventListener('touchmove', this, false);
+	        this.element.addEventListener('touchend', this, false);      
+	    },
+	    onTouchMove: function(e) {
+	        this.moved = true;
+	        this.theTarget.className = this.theTarget.className.replace(/ ?pressed/gi, '');      
+	    },
+	    onTouchEnd: function(e) {
+	        this.element.removeEventListener('touchmove', this, false);
+	        this.element.removeEventListener('touchend', this, false);                    
+	        if (!this.moved && this.theTarget) {
+	            this.theTarget.className = this.theTarget.className.replace(/ ?pressed/gi, '');                        
+	            var theEvent = document.createEvent('MouseEvents');
+	            theEvent.initEvent('click', true, true);
+	            this.theTarget.dispatchEvent(theEvent);                
+	        }
+	        this.theTarget = undefined;      
+	    }
+	};
+	//消除ckick()事件300毫秒的延迟
+	new NoClickDelay(document.getElementById("myCanvas"));
+	new NoClickDelay(document.getElementById("Canvas2"));
+	
+	$("body").on('touchmove',function(event){
+		event.preventDefault();
+	});
+	window.addEventListener('load', function() {
+	    FastClick.attach(document.body);
+	}, false);
+	
+	//开始
+//5列
+	var canvas;//定义canvas对象;
+	var distance = 49.5;//食物的宽度;
+	var randomNum1 = 0;//获取位置的下标;
+	var record = 0;
+	var addfoodsTime = 0 , updateTime = 0 , radius = 0 , sqrt_radius = 1000 , cavWidth = 0 , cavHeight = 0;
+	var speedTop = 4 ;
+	function canvasObj( canvas ){
+		this.mycanvas = canvas;
+		this.cxt = canvas.getContext("2d");
+		this.height = canvas.height;
+		this.width = canvas.width;
+	}
+	function canvasObj2( canvas2 ){
+		this.mycanvas = canvas2;
+		this.cxt = canvas2.getContext("2d");
+		this.height = canvas2.height;
+		this.width = canvas2.width;
+	}
+	function foodsObj( imgsrc ){
+		this.img = new Image();
+		this.img.src = imgsrc;
+		this.top = 10;
+		this.left = 0;
+		this.minX = 0;//坐标x
+		this.maxX = 0;
+		this.X = 0;
+		this.Y = 0;
+	}
+	var food1 = new foodsObj("img/medal-img2.png");
+	var food2 = new foodsObj("img/medal-img3.png");
+	var food3 = new foodsObj("img/medal-img3-2.png");
+	var foods = [] , distances = [];
+	function distancefunction(){
+		distances = [ 0 , distance + 12 , ( distance + 12 ) * 2 , ( distance + 12 ) * 3 , ( distance + 12 ) * 4 ];
+	}
+	
+	function drawfoods(){
+		for( var i = 0 ; i < foods.length ; i++ ){
+			canvas.cxt.clearRect( foods[i].margin_left + foods[i].left , foods[i].top - 6 , foods[i].width , foods[i].height + 20 );
+			canvas.cxt.beginPath();
+			canvas.cxt.drawImage( foods[i].img , foods[i].margin_left + foods[i].left , foods[i].top , foods[i].width , foods[i].height );
+			canvas.cxt.closePath();
+		}
+	}
+	
+	function update(){
+		for( var i = 0 ; i < foods.length ; i++ ){
+			foods[i].top += speedTop;
+			if( foods[i].top >= canvas.height ){
+				foods.splice( i , 1 );
+			}
+			var abs_height = Math.abs( Math.pow( (foods[i].top + radius - food3.Y) , 2 ) );
+			var abs_width = Math.abs( Math.pow( (foods[i].margin_left + foods[i].left + radius - food3.X) , 2 ) );
+			sqrt_radius = Math.sqrt( abs_height + abs_width );
+			if( sqrt_radius <= food3.width ){
+				canvas.cxt.clearRect( foods[i].margin_left + foods[i].left , foods[i].top - 6 , foods[i].width , foods[i].height + 20 )
+				
+				foods.splice( i , 1 );
+				record++;
+				console.log( record )
+			}
+		}
+	}
+	
+	function addfoods(){
+		var length = Math.floor( Math.random() * 2 + 1 );
+		var randomNums1 = [ 0 , 1 , 2 , 3 , 4 ];
+		var new_distances = [];
+		for( var i = 0 ; i < length ; i++ ){
+			foods.push( new foodsObj("img/medal-img3.png") );
+			var index = Math.floor( Math.random() * randomNums1.length );
+			foods[ foods.length - 1 ].left = distances[ randomNums1[index] ];
+			foods[ foods.length - 1 ].minX = foods[ foods.length - 1 ].left + foods[ foods.length - 1 ].margin_left;
+			foods[ foods.length - 1 ].maxX = foods[ foods.length - 1 ].left + foods[ foods.length - 1 ].margin_left + foods[ foods.length - 1 ].width;
+			randomNums1.splice( index , 1 );
+		}
+	}
+	
+	function drawfood3(){
+		canvas2.cxt.beginPath();
+		canvas2.cxt.drawImage( food3.img , food3.touchX , food3.touchY , food3.width , food3.height );
+		canvas2.cxt.closePath();
+	}
+	
+	window.onload = function(){
+		
+		bodySize();
+		window.onresize = function(){
+			bodySize();
+		}
+		function bodySize(){
+			cavWidth = parseInt($("#frame").css("width"));
+			cavHeight = parseInt( $(window).height() );
+			distance = parseInt($("#frame").css("width")) * 99 / 640;
+			foodsObj.prototype.margin_left = parseInt($("#frame").css("width")) * 24 / 640;
+			foodsObj.prototype.width = distance;
+			foodsObj.prototype.height = distance;
+			document.getElementById("myCanvas").setAttribute("width",cavWidth);
+			document.getElementById("myCanvas").setAttribute("height",cavHeight);
+			document.getElementById("Canvas2").setAttribute("width",cavWidth);
+			document.getElementById("Canvas2").setAttribute("height",cavHeight);
+			canvas = new canvasObj(document.getElementById("myCanvas"));
+			canvas2 = new canvasObj(document.getElementById("Canvas2"));
+			distancefunction();
+		}
+		
+		drawfood3();
+		addfoods();
+		updateTime = setInterval(function(){
+			drawfoods();
+			update();
+		},33);
+		addfoodsTime = setInterval(function(){
+			addfoods();
+		},1000);
+		radius = food3.width / 2;
+		document.getElementById("Canvas2").addEventListener( 'touchstart' , function(event){
+			event.preventDefault();
+			food3.touchX = event.touches[0].pageX - radius;
+			food3.touchY = event.touches[0].pageY - radius;
+			food3.X = event.touches[0].pageX;
+			food3.Y = event.touches[0].pageY;
+			canvas2.cxt.clearRect( 0 , 0 , canvas2.width , canvas2.height );
+			canvas2.cxt.beginPath();
+			canvas2.cxt.drawImage( food3.img , food3.touchX , food3.touchY , food3.width , food3.height );
+			canvas2.cxt.closePath();
+			for( var i = 0 ; i < foods.length ; i++ ){
+				var abs_height = Math.abs( Math.pow( (foods[i].top + radius - food3.Y) , 2 ) );
+				var abs_width = Math.abs( Math.pow( (foods[i].margin_left + foods[i].left + radius - food3.X) , 2 ) );
+				sqrt_radius = Math.sqrt( abs_height + abs_width );
+				if( sqrt_radius <= food3.width ){
+					canvas.cxt.clearRect( foods[i].margin_left + foods[i].left , foods[i].top - 6 , foods[i].width , foods[i].height + 20 )
+					
+					foods.splice( i , 1 );
+				}
+			}
+		})
+		document.getElementById("Canvas2").addEventListener( 'touchmove' , function(event){
+			event.preventDefault();
+			radius = food3.width / 2;
+			food3.touchX = event.touches[0].pageX - radius;
+			food3.touchY = event.touches[0].pageY - radius;
+			food3.X = event.touches[0].pageX;
+			food3.Y = event.touches[0].pageY;
+			canvas2.cxt.clearRect( 0 , 0 , canvas2.width , canvas2.height );
+			canvas2.cxt.beginPath();
+			canvas2.cxt.drawImage( food3.img , food3.touchX , food3.touchY , food3.width , food3.height );
+			canvas2.cxt.closePath();
+			for( var i = 0 ; i < foods.length ; i++ ){
+				var abs_height = Math.abs( Math.pow( (foods[i].top + radius - food3.Y) , 2 ) );
+				var abs_width = Math.abs( Math.pow( (foods[i].margin_left + foods[i].left + radius - food3.X) , 2 ) );
+				sqrt_radius = Math.sqrt( abs_height + abs_width );
+				if( sqrt_radius <= food3.width ){
+					canvas.cxt.clearRect( foods[i].margin_left + foods[i].left , foods[i].top - 6 , foods[i].width , foods[i].height + 20 )
+					
+					foods.splice( i , 1 );
+				}
+			}
+		})
+	}
+
+</script>
+</body>
+</html>

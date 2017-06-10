@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+		<div class="btn">
+			点我
+		</div>
+		<script src="js/jquery1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function Obj(n){
+				this.cont = n;
+			}
+			var arry = [new Obj(1),new Obj(2)];
+			var obj = arry[1];
+			$('.btn').click(function(){
+				arry.splice(1,1);
+				console.log(obj.cont);
+			});
+		</script>
+	</body>
+</html>

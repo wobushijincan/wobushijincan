@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>“心安·怡”互联网专家门诊预约指南</title>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="0" http-equiv="expires">
+<meta content="telephone=no, address=no" name="format-detection">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!--<base href="http://img.pr.wmting.com/xinanyih5_new/"/>-->
+<link href="style/reset.css" rel="stylesheet" type="text/css">
+<link href="style/index.css?v=1" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="style/eqShow-1.css" />
+<script src="js/jquery-1.7.2.min.js" language="javascript" type="text/javascript"></script>
+<script src="js/modernizr-2.6.2.min.js" language="javascript" type="text/javascript"></script>
+<script src="js/seconds-kill.js" language="javascript" type="text/javascript"></script>
+<script src="js/idangerous.swiper.min.js" language="javascript" type="text/javascript"></script>
+<script src="js/hack.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/swiper.js" language="javascript" type="text/javascript"></script>
+<style type="text/css">
+.page1_1 span{display: block;text-align: center;line-height: 35px;color: #6C3B06;font-size: 20px;}
+.page1_2 span{display: block;text-align: center;line-height: 40px;color: #6C3B06;font-size: 20px;}
+.page1_2 span i{font-style: normal;}
+.frame ul{overflow: hidden;}
+.frame li{  position: relative;width: 22.4%;float: left;margin-left: 2%;border-radius: 8px;background: white;margin-top: 2%;}
+.content{width: 100%;}
+.redbao{width: 50%;top: 15%;left: 27%;}
+.cuizi{width: 84%;top: 13%;left: 62%;}
+.gold{width: 28%;top: 70%;left: 40%;}
+</style>
+</head>
+<body>
+<div id="loading">
+    <table>
+        <tr>
+            <td><img src="images/loading.gif" /></td>
+        </tr>
+    </table>
+</div>
+<div id="div_main">
+	<div style="display: block;" id="audio_btn" class="play_yinfu">
+		<div class="rotate" id="yinfu"></div>
+		<audio loop="loop"  id="media" preload="preload">
+			<source src="images/music.mp3?v=1"></source>
+			您的浏览器不支持音乐播放。
+		</audio>
+    </div>
+    <div id="desktop" class="swiper-container"><!--滑动区域-->
+        <div class="swiper-wrapper mainframe"><!--图片区域-->
+            <div class="swiper-slide page1 tabdiv swiper-slide-visible swiper-slide-active"><!--第1页-->
+                <div class="words-div">  
+                	<div class="page1_1">
+                		<span class="default1">0元</span>
+                	</div>
+	                <div class="page1_2">
+	                	<span class="default2"><i class="minute">1:</i><i class="seconds">00</i></span>
+	                </div>
+	                <div class="frame">
+	                	<ul>
+	                		<li onclick="hack($(this))">
+	                			<div class="content">
+	                				<!--<div class="redbao"><img src="images/redbao.png"/></div>
+	                				<div class="cuizi"><img src="images/sinker.png"/></div>
+	                				<div class="gold"><img src="images/gold.png"/></div>-->
+	                			</div>
+	                		</li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                		<li onclick="hack($(this))"><div class="content"></div></li>
+	                	</ul>
+	                </div>
+                </div>
+                <div class="tab-main"></div>
+                <div class="bottom-arrow"><img src="images/arrow_up.png" /></div>
+            </div>
+        </div>
+        <div class="pagination"></div><!--页面标签符-->
+    </div>
+</div>
+<!--<script>
+	$(function(){
+		$("#audio_btn").toggle(function(){
+	    	$("audio")[0].play();	//播放
+	    },function(){
+	    	$("audio")[0].pause();	//暂停
+		});
+		document.getElementById('media').play();
+		document.addEventListener("WeixinJSBridgeReady", function() {
+			WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
+				document.getElementById('media').play();
+			});
+		}, false);
+	})
+</script>-->
+<script type="text/javascript">
+	$('body').on('touchmove', function (event) {
+	    event.preventDefault();
+	});
+	alert($(window).width() + ',' + $(window).height());
+</script>
+</body>
+</html>

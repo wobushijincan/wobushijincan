@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>摘椰果</title>
+<meta name="description" content="九个">
+<meta name="keywords" content="社会">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1">
+<link href="style/reset.css" rel="stylesheet" type="text/css">
+<link href="style/pick-coconut-game.css?v=1.4" rel="stylesheet" type="text/css">
+<script src="js/jquery1.11.0.js" language="javascript" type="text/javascript"></script>
+<script src="js/modernizr-2.6.2.min.js" language="javascript" type="text/javascript"></script>
+<script src="js/pick-coconut-game.js?v=1.5" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+<div id="loading-frame">
+	<table>
+        <tr>
+            <td>
+                <div class="loading-content">
+                    <div class="image-div">
+                    	<img src="images/loading-logo.png" />
+                    </div>
+                    <div class="progress-bar">
+                    	<div class="bar-frame">
+                    		<div class="bar-content"></div>
+                    	</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="home-frame">
+	<div class="cloud-div1">
+		<img src="images/cloud-img1.png" />
+	</div>
+	<div class="cloud-div2">
+		<img src="images/cloud-img2.png" />
+	</div>
+	<div class="top-words">
+		<div class="top-content">
+			<img src="images/top-words.png" />
+		</div>
+	</div>
+	<div class="monkey-frame">
+		<div class="monkey-content">
+			<div class="monkey-div">
+				<img src="images/monkey-img2.png" />
+			</div>
+			<div class="monkey-foot">
+				<img src="images/monkey-img3.png" />
+			</div>
+		</div>
+	</div>
+	<div class="shadow-div">
+		<img src="images/shadow-img.png" />
+	</div>
+	<div class="crab-frame">
+		<div class="crab-div">
+			<img src="images/crab-img1.png" />
+		</div>
+		<div class="crab-hand1">
+			<img src="images/crab-img2.png" />
+		</div>
+		<div class="crab-hand2">
+			<img src="images/crab-img3.png" />
+		</div>
+		<div class="crab-foot1">
+			<img src="images/crab-img4.png" />
+		</div>
+		<div class="crab-foot2">
+			<img src="images/crab-img5.png" />
+		</div>
+		<div class="crab-foot3">
+			<img src="images/crab-img6.png" />
+		</div>
+		<div class="crab-foot4">
+			<img src="images/crab-img7.png" />
+		</div>
+	</div>
+	<div class="click-div">
+		<div class="click-content">
+			<img src="images/click-img.png" />
+		</div>
+	</div>
+</div>
+<div id="game-frame">
+	<div class="scene-frame">
+		<div id="score-div">
+			<span id="score-number">0</span>
+			<span id="gift-number">0</span>
+		</div>
+		<div id="time-number">
+			<div class="time-content">
+				<span id="total-number">60000</span>
+				<span id="minute-number">01</span>
+				<span class="line-span">:</span>
+				<span id="seconds-number">00</span>
+                <span class="line-span">:</span>
+                <span id="ms-number">00</span>
+			</div>
+		</div>
+		<div class="left-tree">
+			<img src="images/coconut-tree1.png" />
+		</div>
+		<div class="right-tree">
+			<img src="images/coconut-tree2.png" />
+		</div>
+		<div class="cloud-div1">
+			<img src="images/cloud-img3.png" />
+		</div>
+		<div class="cloud-div2">
+			<img src="images/cloud-img4.png" />
+		</div>
+		<div class="left-trunk">
+			<img src="images/tree-trunk.png" />
+		</div>
+		<div class="right-trunk">
+			<img src="images/tree-trunk.png" />
+		</div>
+	</div>
+	<div class="game-content">
+		<div id="monkey-frame">
+			<div class="monkey-climb">
+				<div class="monkey-climb1"><img src="images/monkey-climb-img2.png" /></div>
+				<div class="monkey-climb2"><img src="images/monkey-climb-img3.png" /></div>
+				<div class="monkey-climb3"><img src="images/monkey-climb-img1.png" /></div>
+			</div>
+			<div class="monkey-fly">
+				<img src="images/monkey-fly-img.png" />
+			</div>
+		</div>
+		<div id="obstacles-list">
+			<ul>
+				<li class="li1">
+				</li>
+				<li class="li2">
+				</li>
+				<li class="li3">
+				</li>
+			</ul>
+		</div>
+		<div id="help-div">
+			<a href="javasript:void(0);" class="help-link">
+				<img src="images/help-ico.png" />
+			</a>
+		</div>
+		<div class="score-frame"></div>
+	</div>
+	<div id="cover-div"></div>
+	<div id="end-div">
+		<div class="btn-div">
+			<button id="replay-btn2"><img src="images/replay-btn.png" /></button>
+			<button id="war-btn2"><img src="images/ranking-btn.png" /></button>
+		</div>
+	</div>
+	<div id="paper-div">
+		<img src="images/paper-ico.png" />
+	</div>
+	<div id="score-frame">
+		<a href="javascript:void(0);" class="close-link">
+			<img src="images/close-ico.png" />
+		</a>
+		<div class="score-content">
+			<div class="score-number">
+				<div class="number-top">
+					<img src="images/score-ico.png" />
+					<span id="number-span">0</span>
+				</div>
+				<div class="number-bottom">今天真是大丰收啊！</div>
+			</div>
+			<div class="gift-number">
+				<div class="number-top">
+					<img src="images/gift-box.png" />
+					<span id="gift-score">×0</span>
+				</div>
+				<div class="number-bottom">太棒了，点击礼盒领红包哦！</div>
+			</div>
+			<div class="btn-div">
+				<button id="replay-btn"><img src="images/replay-btn.png" /></button>
+				<button id="war-btn"><img src="images/ranking-btn.png" /></button>
+			</div>
+		</div>
+	</div>
+	<div id="list-frame">
+		<a href="javascript:void(0);" class="close-link">
+			<img src="images/close-ico.png" />
+		</a> 
+		<div class="list-content">
+			<div class="not-focus">
+				<div class="score-number">
+					<div class="number-top">
+						<img src="images/score-img.png" />
+						<span id="number-span2">0</span>
+					</div>
+					<div class="number-bottom">
+						<p>糟糕！我们读取不到您的排名情况！有可能是因为您还没关注哦。</p>
+					</div>
+				</div>
+				<div class="btn-div">
+					<button id="focus-btn"><img src="images/focus-btn.png" /></button>
+				</div>
+				<div class="score-list">
+					<ul>
+						<li>
+							<div class="li-left"><img src="images/crown-ico1.png" /></div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left"><img src="images/crown-ico2.png" /></div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left"><img src="images/crown-ico3.png" /></div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left">4</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left">5</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="focus-on">
+				<div class="score-number">
+					<div class="number-top">
+						<img src="images/score-img.png" />
+						<span id="number-span3">1770</span>
+					</div>
+				</div>
+				<div class="score-list">
+					<ul>
+						<li>
+							<div class="li-left"><img src="images/crown-ico1.png" /></div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left"><img src="images/crown-ico2.png" /></div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left"><img src="images/crown-ico3.png" /></div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left">4</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left">5</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left">6</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left">7</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left">8</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="omit-div">······</div>
+						</li>
+						<li class="current">
+							<div class="li-left">40</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="help-frame">
+		<a href="javascript:void(0);" class="close-link">
+			<img src="images/close-ico.png" />
+		</a>
+		<div class="help-content">
+			<div class="top-info">
+				<p>简单点说：拖动小猴子接椰果。</p>
+				<p>复杂点说：可以左右拖动小猴子在两棵椰树之间接椰果，碰到即可得分！</p>
+				<p>一大波椰果袭来的时候会随机掉幸运礼包，千万不要放过吖。</p>
+				<p>分数高者可上排行榜，礼包还可以换取相应红包哦。</p>
+			</div>
+			<div class="btn-div">
+				<button id="star-btn"><img src="images/star-btn.png" /></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

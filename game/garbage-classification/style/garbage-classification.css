@@ -1,0 +1,134 @@
+﻿@charset "UTF-8";
+/*z中文 */
+/* CSS Document */
+
+#main-frame{
+	background: #f2f2f2;
+	position: fixed;
+	_position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+.classification{
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	z-index: 6;
+}
+.classification.class1{
+	left: 40px;
+	top: 40px;
+	background: #f00;
+}
+.classification.class2{
+	right: 40px;
+	top: 40px;
+	background: #0f0;
+}
+.classification.class3{
+	left: 40px;
+	bottom: 40px;
+	background: #00f;
+}
+.classification.class4{
+	right: 40px;
+	bottom: 40px;
+	background: #ff0;
+}
+.garbage-list .garbage-div{
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	left: 0px;
+	margin: -25px 0 0 -25px;
+	line-height: 0;
+	z-index: 9;
+}
+.garbage-list .garbage-div.garbage1{
+	background: #f00;
+}
+.garbage-list .garbage-div.garbage2{
+	background: #0f0;
+}
+.garbage-list .garbage-div.garbage3{
+	background: #00f;
+}
+.garbage-list .garbage-div.garbage4{
+	background: #ff0;
+}
+.garbage-list .garbage-div.run{
+	/*-webkit-animation: run 6s linear forwards;
+	-moz-animation: run 6s linear forwards;
+	-ms-animation: run 6s linear forwards;
+	-o-animation: run 6s linear forwards;
+	animation: run 6s linear forwards;*/
+}
+@-webkit-keyframes run {
+	0% {left: 0;}
+	100% {left: 110%;}
+}
+@-moz-keyframes run {
+	0% {left: 0;}
+	100% {left: 110%;}
+}
+@-ms-keyframes run {
+	0% {left: 0;}
+	100% {left: 110%;}
+}
+@-o-keyframes run {
+	0% {left: 0;}
+	100% {left: 110%;}
+}
+@keyframes run {
+	0% {left: 0;}
+	100% {left: 110%;}
+}
+.garbage-list .li1 .garbage-div{
+	top: 40%;
+}
+.garbage-list .li2 .garbage-div{
+	top: 60%;
+}
+.garbage-list .garbage-div img{
+	width: 100%;
+}
+
+#time-number{
+	position: absolute;
+	right: 10px;
+	top: 0;
+	font: 14px "微软雅黑","宋体",arial;
+	color: #333;
+	line-height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

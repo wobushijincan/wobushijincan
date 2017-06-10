@@ -1,0 +1,597 @@
+﻿@charset "UTF-8";
+/*z中文 */
+/* CSS Document */
+
+#compete-frame{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	background: #464549;
+	z-index: 5;
+}
+#compete-frame .my-frame{
+	position: absolute;
+	width: 100%;
+	left: -100%;
+	top: -6%;
+	bottom: 42%;
+	background: #464549;
+	overflow: hidden;
+	z-index: 5;
+}
+#compete-frame.current .my-frame{
+	-webkit-animation: myFRun 1s linear forwards;
+	animation: myFRun 1s linear forwards;
+}
+@-webkit-keyframes myFRun {
+	0% {left: -100%;}
+	100% {left: 0;}
+}
+@keyframes myFRun {
+	0% {left: -100%;}
+	100% {left: 0;}
+}
+#compete-frame .my-frame .my-cover{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 6;
+	overflow: hidden;
+	line-height: 0;
+}
+#compete-frame .my-frame .my-cover img{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+}
+#compete-frame .my-frame .room-frame{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 50%;
+	margin-left: -50%;
+	background: url(../images/room-bg1.png) no-repeat;
+	background-size:100% 100%;
+	z-index: 5;
+}
+#compete-frame .my-frame .room-frame .floor-frame{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	line-height: 0;
+	z-index: 5;
+}
+#compete-frame .my-frame .room-frame .floor-frame img{
+	width: 100%;
+}
+#compete-frame .my-frame .room-frame .metope-frame{
+	position: absolute;
+	width: 62.2%;
+	left: 12.38%;
+	top: 20.21%;
+	line-height: 0;
+	z-index: 6;
+}
+#compete-frame .my-frame .room-frame .metope-frame img{
+	width: 100%;
+}
+#compete-frame .my-frame .room-frame .wardrobe-frame{
+	position: absolute;
+	width: 26.6%;
+	left: 0%;
+	top: 0%;
+	line-height: 0;
+	z-index: 7;
+}
+#compete-frame .my-frame .room-frame .wardrobe-frame img{
+	width: 100%;
+}
+#compete-frame .my-frame .room-frame .television-frame{
+	position: absolute;
+	width: 22.6%;
+	left: 38.7%;
+	top: 31.6%;
+	line-height: 0;
+	z-index: 7;
+}
+#compete-frame .my-frame .room-frame .television-frame img{
+	width: 100%;
+}
+#compete-frame .my-frame .room-frame .lamp-frame{
+	position: absolute;
+	width: 9.21%;
+	bottom: 22.49%;
+	z-index: 8;
+}
+#compete-frame .my-frame .room-frame .lamp-frame1{
+	left: 25.93%;
+	-webkit-transform: rotate3d(0,1,0,180deg);
+	transform: rotate3d(0,1,0,180deg);
+}
+#compete-frame .my-frame .room-frame .lamp-frame2{
+	left: 65.64%;
+}
+#compete-frame .my-frame .room-frame .lamp-frame .table-frame{
+	line-height: 0;
+}
+#compete-frame .my-frame .room-frame .lamp-frame .table-frame img{
+	width: 100%;
+}
+#compete-frame .my-frame .room-frame .lamp-frame .desk-lamp{
+	position: absolute;
+	width: 66.38%;
+	bottom: 96.5%;
+	z-index: 5;
+}
+#compete-frame .my-frame .room-frame .lamp-frame1 .desk-lamp{
+	left: 7.56%;
+}
+#compete-frame .my-frame .room-frame .lamp-frame2 .desk-lamp{
+	left: 11.76%;
+}
+#compete-frame .my-frame .room-frame .lamp-frame .desk-lamp img{
+	width: 100%;
+}
+#compete-frame .my-frame .room-frame .bed-frame{
+	position: absolute;
+	width: 44.7%;
+	left: 27.67%;
+	bottom: 12.3%;
+	line-height: 0;
+	z-index: 9;
+}
+#compete-frame .my-frame .room-frame .bed-frame img{
+	width: 100%;
+}
+#compete-frame .my-frame .room-frame .pillow-frame{
+	position: absolute;
+	width: 25.85%;
+	left: 37.38%;
+	bottom: 31.67%;
+	line-height: 0;
+	z-index: 10;
+}
+#compete-frame .my-frame .room-frame .pillow-frame img{
+	width: 100%;
+}
+#compete-frame .my-frame .room-frame .quilt-frame{
+	position: absolute;
+	width: 45%;
+	left: 27.6%;
+	top: 65.62%;
+	line-height: 0;
+	z-index: 11;
+}
+#compete-frame .my-frame .room-frame .quilt-frame img{
+	width: 100%;
+}
+#compete-frame .my-frame .room-frame .decoration-frame{
+	position: absolute;
+	width: 14.86%;
+	left: 29.8%;
+	bottom: 8.75%;
+	line-height: 0;
+	z-index: 12;
+}
+#compete-frame .my-frame .room-frame .decoration-frame img{
+	width: 100%;
+}
+#compete-frame .my-frame .room-frame .window-frame{
+	position: absolute;
+	width: 22.29%;
+	left: 77.63%;
+	bottom: 18%;
+	line-height: 0;
+	z-index: 12;
+}
+#compete-frame .my-frame .room-frame .window-frame img{
+	width: 100%;
+}
+#compete-frame .my-frame .room-frame .dome-light{
+	position: absolute;
+	width: 21.05%;
+	left: 40%;
+	top: 6.04%;
+	line-height: 0;
+	z-index: 12;
+}
+#compete-frame .my-frame .room-frame .dome-light img{
+	width: 100%;
+}
+#compete-frame .other-frame{
+	position: absolute;
+	width: 100%;
+	left: 100%;
+	bottom: 0;
+	top: 44%;
+	overflow: hidden;
+	line-height: 0;
+	z-index: 6;
+	background: url(../images/compete-img7.png) no-repeat;
+	background-size: 100% auto;
+	padding-top: 20px;
+}
+#compete-frame.current .other-frame{
+	-webkit-animation: otherFRun 1s linear forwards;
+	animation: otherFRun 1s linear forwards;
+}
+@-webkit-keyframes otherFRun {
+	0% {left: 100%;}
+	100% {left: 0;}
+}
+@keyframes otherFRun {
+	0% {left: 100%;}
+	100% {left: 0;}
+}
+#compete-frame .other-frame img{
+	width: 100%;
+}
+#compete-frame .cover-div{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.7);
+	z-index: 7;
+}
+#compete-frame .vs-div{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 38%;
+	line-height: 0;
+	z-index: 8;
+	opacity: 0;
+}
+#compete-frame.current .vs-div{
+	-webkit-animation: vsRun 1s linear 1s forwards;
+	animation: vsRun 1s linear 1s forwards;
+}
+@-webkit-keyframes vsRun {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale(1,1);
+		transform: scale(1,1);
+	}
+	50%{
+		opacity: 1;
+		-webkit-transform: scale(2,2);
+		transform: scale(2,2);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1,1);
+		transform: scale(1,1);
+	}
+}
+@keyframes vsRun {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale(1,1);
+		transform: scale(1,1);
+	}
+	50%{
+		opacity: 1;
+		-webkit-transform: scale(2,2);
+		transform: scale(2,2);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1,1);
+		transform: scale(1,1);
+	}
+}
+#compete-frame .vs-div img{
+	width: 100%;
+}
+#compete-frame .my-score{
+	position: absolute;
+	width: 230px;
+	height: 52px;
+	left: 50%;
+	top: 20%;
+	margin-left: -105px;
+	background: url(../images/compete-img6.png) no-repeat;
+	background-size: 100% 100%;
+	z-index: 9;
+	opacity: 0;
+}
+#compete-frame.current .my-score{
+	-webkit-animation: scoreRun 1s linear 2s forwards;
+	animation: scoreRun 1s linear 2s forwards;
+}
+@-webkit-keyframes scoreRun {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@keyframes scoreRun {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+#compete-frame .my-score .desk-div{
+	position: absolute;
+	width: 44px;
+	left: 2px;
+	bottom: -2px;
+	line-height: 0;
+}
+#compete-frame .my-score .desk-div img{
+	width: 100%;
+}
+#compete-frame .my-score .score-left{
+	float: left;
+	width: 68px;
+	padding-left: 42px;
+}
+#compete-frame .my-score .score-left .name-div{
+	font: 14px "微软雅黑","宋体",arial;
+	color: #000;
+	line-height: 25px;
+	padding-top: 3px;
+	height: 25px;
+	text-overflow:ellipsis; 
+	overflow:hidden; 
+	white-space:nowrap; 
+}
+#compete-frame .my-score .score-left .score-div{
+	font: 14px "微软雅黑","宋体",arial;
+	color: #000;
+	line-height: 22px;
+}
+#compete-frame .my-score .score-right{
+	float: left;
+	width: 110px;
+	font: 40px "微软雅黑","宋体",arial;
+	color: #000;
+	line-height: 52px;
+}
+
+#compete-frame .other-score{
+	position: absolute;
+	width: 230px;
+	height: 52px;
+	left: 50%;
+	bottom: 20%;
+	margin-left: -105px;
+	background: url(../images/compete-img5.png) no-repeat;
+	background-size: 100% 100%;
+	z-index: 9;
+	opacity: 0;
+}
+#compete-frame.current .other-score{
+	-webkit-animation: scoreRun 1s linear 2s forwards;
+	animation: scoreRun 1s linear 2s forwards;
+}
+#compete-frame .other-score .desk-div{
+	position: absolute;
+	width: 44px;
+	left: 2px;
+	bottom: -2px;
+	line-height: 0;
+}
+#compete-frame .other-score .desk-div img{
+	width: 100%;
+}
+#compete-frame .other-score .score-left{
+	float: left;
+	width: 68px;
+	padding-left: 42px;
+}
+#compete-frame .other-score .score-left .name-div{
+	font: 14px "微软雅黑","宋体",arial;
+	color: #000;
+	line-height: 25px;
+	padding-top: 3px;
+	height: 25px;
+	text-overflow:ellipsis; 
+	overflow:hidden; 
+	white-space:nowrap; 
+}
+#compete-frame .other-score .score-left .score-div{
+	font: 14px "微软雅黑","宋体",arial;
+	color: #000;
+	line-height: 22px;
+}
+#compete-frame .other-score .score-right{
+	float: left;
+	width: 110px;
+	font: 40px "微软雅黑","宋体",arial;
+	color: #000;
+	line-height: 52px;
+}
+
+#result-frame{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	background: url(../images/compete-img19.jpg) center top no-repeat;
+	background-size: cover;
+	z-index: 6;
+	display: none;
+}
+#result-frame .cover-div{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.7);
+	z-index: 6;
+}
+#result-frame .win-bg{
+	position: absolute;
+	width: 100%;
+	line-height: 0;
+	left: 0;
+	top: -10%;
+	z-index: 7;
+}
+#result-frame .win-bg img{
+	width: 100%;
+}
+#result-frame .win-frame{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: -10%;
+}
+#result-frame .portrait-frame{
+	position: relative;
+	width: 18%;
+	margin-left: 41%;
+	margin-top: 25.6%;
+	z-index: 8;
+}
+#result-frame .portrait-frame .portrait-div{
+	line-height: 0;
+}
+#result-frame .portrait-frame .portrait-div img{
+	width: 100%;
+}
+#result-frame .portrait-frame .crest-div{
+	position: absolute;
+	width: 150%;
+	left: -25%;
+	bottom: 70%;
+	z-index: 5;
+}
+#result-frame .portrait-frame .crest-div img{
+	width: 100%;
+}
+#result-frame .portrait-frame .shiny-div{
+	position: absolute;
+	left: -40%;
+	top: -64%;
+	width: 165%;
+	line-height: 0;
+	z-index: 6;
+}
+#result-frame .portrait-frame .shiny-div img{
+	width: 100%;
+}
+#result-frame .win-content{
+	position: relative;
+	width: 76.56%;
+	margin-left: 12.52%;
+	margin-top: 2.3%;
+	z-index: 8;
+}
+#result-frame .win-content .win-head{
+	line-height: 0;
+}
+#result-frame .win-content .win-head img{
+	width: 100%;
+}
+#result-frame .win-content .score-frame{
+	text-align: center;
+	background: #f4c300;
+	padding: 10px 0;
+}
+#result-frame .win-content .score-frame .score-left{
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+#result-frame .win-content .score-frame .score-left .name{
+	font: bold 14px "微软雅黑","宋体",arial;
+	color: #000;
+	line-height: 20px;
+	text-align: left;
+}
+#result-frame .win-content .score-frame .score-left .score-words{
+	font: 14px "微软雅黑","宋体",arial;
+	color: #000;
+	line-height: 20px;
+	text-align: left;
+}
+#result-frame .win-content .score-frame .score-right{
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	font: bold 40px "微软雅黑","宋体",arial;
+	color: #000;
+	line-height: 60px;
+	text-align: left;
+	margin-left: 6px;
+}
+#result-frame .win-content .crest-list{
+	background: #938e7d;
+	padding: 10px 0;
+}
+#result-frame .win-content .crest-list ul{
+	margin: 0 2.65%;
+}
+#result-frame .win-content .crest-list ul:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+#result-frame .win-content .crest-list li{
+	width: 19.4%;
+	float: left;
+	margin: 0 2.8%;
+}
+#result-frame .win-content .crest-list li .state-div1{
+	line-height: 0;
+	text-align: center;
+	display: none;
+}
+#result-frame .win-content .crest-list li.selected .state-div1{
+	display: block;
+}
+#result-frame .win-content .crest-list li .state-div1 img{
+	height: 24px;
+}
+#result-frame .win-content .crest-list li .state-div2{
+	font: 14px "微软雅黑","宋体",arial;
+	color: #464549;
+	line-height: 24px;
+	text-align: center;
+}
+#result-frame .win-content .crest-list li.selected .state-div2{
+	display: none;
+}
+#result-frame .win-content .crest-list li .crest-div{
+	line-height: 0;
+}
+#result-frame .win-content .crest-list li .crest-div img{
+	width: 100%;
+}
+#result-frame .btn-frame{
+	position: relative;
+	width: 100%;
+	left: 0;
+	margin-top: -4%;
+	line-height: 0;
+	z-index: 7;
+}
+#result-frame .luminous-div img{
+	width: 100%;
+}
+#result-frame .btn-div{
+	position: absolute;
+	width: 65.46%;
+	left: 14.8%;
+	top: 20%;
+	z-index: 11;
+}
+#result-frame .btn-div a{
+	display: block;
+	line-height: 0;
+}
+#result-frame .btn-div a img{
+	width: 100%;
+}

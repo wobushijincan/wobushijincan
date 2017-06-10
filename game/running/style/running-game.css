@@ -1,0 +1,111 @@
+﻿@charset "UTF-8";
+/*z中文 */
+/* CSS Document */
+
+#main-frame{
+	background: #f2f2f2;
+	position: fixed;
+	_position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+#figure-frame{
+	position: absolute;
+	left: 100px;
+	bottom: 50%;
+}
+#figure-frame .figure-content{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 20px;
+	height: 20px;
+	background: #000;
+}
+.garbage-list{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 50%;
+}
+.garbage-list .garbage-div{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 0px;
+	bottom: 0;
+	line-height: 0;
+	z-index: 9;
+}
+.garbage-list .garbage-div.garbage1{
+	background: #f00;
+}
+.garbage-list .garbage-div.garbage2{
+	background: #0f0;
+}
+.garbage-list .garbage-div.garbage3{
+	background: #00f;
+}
+.garbage-list .garbage-div.garbage4{
+	background: #ff0;
+}
+.garbage-list .garbage-div img{
+	width: 100%;
+}
+
+
+.integral-list{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 50%;
+	margin-top: -60px;
+}
+.integral-list .integral-div{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 0px;
+	top: 0;
+	line-height: 0;
+	z-index: 9;
+	border-radius: 50%;
+}
+.integral-list .integral-div.integral1{
+	background: #f00;
+}
+.integral-list .integral-div.integral2{
+	background: #0f0;
+}
+.integral-list .integral-div.integral3{
+	background: #00f;
+}
+.integral-list .integral-div.garbage4{
+	background: #ff0;
+}
+.integral-list .integral-div img{
+	width: 100%;
+}
+
+#time-number{
+	position: absolute;
+	right: 10px;
+	top: 0;
+	font: 14px "微软雅黑","宋体",arial;
+	color: #333;
+	line-height: 20px;
+}
+
+#path-div{
+	position: absolute;
+	width: 200%;
+	height: 2px;
+	background: #ccc;
+	left: 0;
+	bottom: 50%;
+	margin-bottom: -2px;
+}

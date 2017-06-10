@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ios 点击</title>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="0" http-equiv="expires">
+<meta content="telephone=no, address=no" name="format-detection">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<style type="text/css">
+.box{width: 100%;}
+#myCanvas{margin: 0 auto;display: block;width: 320px;height: 320px;border: 1px solid black;}
+</style>
+</head>
+<body>
+	<div class="box" id="box1">
+		<canvas id="myCanvas"></canvas>
+	</div>
+	<script src="js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function NoClickDelay(el) {
+	    this.element = typeof el == 'object' ? el: document.getElementById(el);      
+	    //if (window.Touch)  this.element.addEventListener('touchstart', this, false);
+	}
+	NoClickDelay.prototype = {
+	    handleEvent: function(e) {              
+	        switch (e.type) {                      
+	        case 'touchstart':
+	            this.onTouchStart(e);
+	            break;                      
+	        case 'touchmove':
+	            this.onTouchMove(e);
+	            break;                      
+	        case 'touchend':
+	            this.onTouchEnd(e);
+	            break;              
+	        }      
+	    },
+	    onTouchStart: function(e) {
+	        e.preventDefault(); this.moved = false;
+	        this.theTarget = document.elementFromPoint(e.targetTouches[0].clientX, e.targetTouches[0].clientY);              
+	        if (this.theTarget.nodeType == 3) this.theTarget = theTarget.parentNode;
+	        this.theTarget.className += ' pressed';
+	        this.element.addEventListener('touchmove', this, false);
+	        this.element.addEventListener('touchend', this, false);      
+	    },
+	    onTouchMove: function(e) {
+	        this.moved = true;
+	        this.theTarget.className = this.theTarget.className.replace(/ ?pressed/gi, '');      
+	    },
+	    onTouchEnd: function(e) {
+	        this.element.removeEventListener('touchmove', this, false);
+	        this.element.removeEventListener('touchend', this, false);                    
+	        if (!this.moved && this.theTarget) {
+	            this.theTarget.className = this.theTarget.className.replace(/ ?pressed/gi, '');                        
+	            var theEvent = document.createEvent('MouseEvents');
+	            theEvent.initEvent('click', true, true);
+	            this.theTarget.dispatchEvent(theEvent);                
+	        }
+	        this.theTarget = undefined;      
+	    }
+	};
+	//消除ckick()事件300毫秒的延迟
+	new NoClickDelay(document.getElementById("myCanvas"));
+	window.addEventListener('load', function() {
+	    FastClick.attach(document.body);
+	}, false);
+	</script>
+	<script src="js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	
+		var img = new Image();
+		img.src = "images/puyou1.jpg";
+		window.onload = function(){
+			var canvas = document.getElementById("myCanvas");
+			var cxt = canvas.getContext("2d");
+			var bool = true;
+			$("#myCanvas").click(function(){
+				if( bool ){
+					cxt.beginPath();
+					cxt.drawImage( img , 0 , 0 , canvas.width , canvas.height );
+					cxt.closePath();
+					bool = false;
+				}else{
+					cxt.clearRect( 0 , 0 , canvas.width , canvas.height );	
+					bool = true;
+				}
+				
+			})
+		}
+	</script>
+</body>
+</html>

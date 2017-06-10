@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="x-ua-compatible" content="IE=edge">
+		<title>龙舟</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<link href="css/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/index.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="frame">
+			<div class="div-container1">
+				<div class="div-img1">
+					<img src="img/Btn2.png"/>
+				</div>
+			</div>
+			<div class="div-container2">
+				<canvas id="myCanvas" width="320" height="480"></canvas>
+				<img class="game-img2" src="img/game-img2.png"/>
+			</div>
+		</div>
+		<script src="js/jquery1.11.0.js" language="javascript" type="text/javascript"></script>
+		<script type="text/javascript">
+			var screenWidth = $(window).width(); // 屏幕宽
+			var screenHeight = $(window).height(); // 屏幕高
+			var imgArry = new Array(); //载入图片;
+			var imgArry_length = 5; // 载入图片数量;
+			var designWidth = 640;  //设计图的宽度;
+			var myCanvas = 0;
+			var positions = new Array(); //坐标位置
+			var col = 5; // 下落是几列，可以随便改不超出屏幕就好
+			function Canvas(canvas,width,height){
+				this.canvas = canvas;
+				this.ctx = canvas.getContext('2d');
+				this.width = width;
+				this.height = height;
+			}
+			function ImgObj(src){
+				this.img = new Image();
+				this.img.src = src;
+				this.imgWidth = this.img.width;
+				this.imgHeight = this.img.height;
+				this.redbao = false;
+				this.X = 0;
+				this.Y = 0;
+				this.touchs = false;  //没有被触摸时候
+				this.vy = 5; // 速度
+				this.succeed = false; // 触摸成功后
+			}
+			//图片加载
+			function imgAdd(){
+				var imgNum = 0;
+				function imgEnd(){
+					imgNum++;
+					if(imgNum == imgArry_length){
+						gameStart();
+					}
+				}
+				function imgLoad(i){
+					if(imgArry[i].img.complete){
+						imgArry[i].imgWidth = imgArry[i].imgWidth * screenWidth / designWidth;
+						imgArry[i].imgHeight = imgArry[i].imgHeight * screenWidth / designWidth;
+						imgEnd();
+					}else{
+						imgArry[i].img.onload = function(){
+							imgArry[i].imgWidth = this.width * screenWidth / designWidth;
+							imgArry[i].imgHeight = this.height * screenWidth / designWidth;
+							imgEnd();
+						}
+					}
+				}
+				for (var i = 0 ; i < imgArry_length ; i++) {
+					var str = "img/game-img"+i+".png";
+					imgArry.push(new ImgObj(str));
+					imgLoad(i);
+				}
+			}
+			//开始游戏
+			function gameStart(){
+				//调用坐标函数
+				posiFun();
+				var oldTime = new Date();
+				var addSpeed = 500; //1秒增加图片
+				var obj = new Array();
+				var addObjTime = 0;
+				var darwTime = 0;
+				var speed = 20; // 加速度
+				var deleteObj = [];
+				var splices = false; // 记录是否删除元素;
+				var maxHeight = screenHeight - imgArry[2].imgHeight; //物体到达这高度时候则清除
+				myCanvas = new Canvas(document.getElementById('myCanvas'),screenWidth,screenHeight);
+				
+				//更新画布
+				function drawUpdate(){
+					myCanvas.ctx.clearRect(0,0,myCanvas.width,myCanvas.height);
+					for ( var i in obj) {
+						if( maxHeight < obj[i].Y && obj[i].touchs == false){
+							deleteObj.push(i);  //将删除的元素索引赋值到数组deleteObj
+						}else if(obj[i].touchs == false){
+							obj[i].Y += obj[i].vy;
+						}
+						myCanvas.ctx.drawImage( obj[i].img , obj[i].X , obj[i].Y , obj[i].imgWidth , obj[i].imgHeight );
+					}
+					for (var z = 0; z < deleteObj.length ; z++) {  //删除所有不符合的元素
+						console.log(deleteObj[z]);
+						obj.splice(deleteObj[z]-z,1);
+					}
+					deleteObj=[];
+					darwTime = setTimeout(function(){
+						drawUpdate();
+					},33);
+				}
+				document.getElementById("myCanvas").addEventListener('touchstart',handlFun,false);
+				document.getElementById("myCanvas").addEventListener('touchmove',handlFun,false);
+				document.getElementById("myCanvas").addEventListener('touchend',handlFun,false);
+				
+				var touchObj = 0; //触摸后选中的对象
+				var touchX = 0; //触摸x坐标
+				var touchY = 0; //触摸y坐标
+				
+				function handlFun(event){
+					switch (event.type){
+						case "touchstart":
+							event.preventDefault();
+							touchX = event.touches[0].pageX;
+							touchY = event.touches[0].pageY;
+							for ( var i in obj) {
+								var maxWidth = obj[i].X + obj[i].imgWidth;
+								var maxHeight = obj[i].Y + obj[i].imgHeight;
+								if( touchX > obj[i].X && touchX < maxWidth && touchY > obj[i].Y && touchY < maxHeight ){
+									touchObj = obj[i];
+									touchObj.touchs = true;
+									touchObj.X = touchX - touchObj.imgWidth / 2;
+									touchObj.Y = touchY - touchObj.imgHeight / 2;
+								}
+							}
+							break;
+						case "touchmove":
+							event.preventDefault();
+							touchX = event.touches[0].pageX;
+							touchY = event.touches[0].pageY;
+							touchObj.X = touchX - touchObj.imgWidth / 2;
+							touchObj.Y = touchY - touchObj.imgHeight / 2;
+							break;
+						case "touchend":
+							event.preventDefault();
+							var minX = (screenWidth - imgArry[2].imgWidth)/2;
+							var maxX = (screenWidth - imgArry[2].imgWidth)/2 + imgArry[2].imgWidth;
+							var minY = screenHeight - imgArry[2].imgHeight;
+							var maxY = screenHeight;
+							touchObj.touchs = false;
+							touchObj.vy = speed;
+							touchX = event.changedTouches[0].pageX;
+							touchY = event.changedTouches[0].pageY;
+							if( touchX > minX && touchX < maxX && touchY > minY && touchY < maxY ){ //拉到目标位置时候
+								touchObj.touchs = true;
+								touchObj.succeed = true;
+								if(touchObj.redbao){
+									touchObj.img.src = imgArry[4].img.src; //改变此刻的图片路径
+									touchObj.imgWidth = imgArry[4].imgWidth;
+									touchObj.imgHeight = imgArry[4].imgHeight;
+									touchObj.X = touchX - touchObj.imgWidth / 2;
+									touchObj.Y = touchY - touchObj.imgHeight / 2;
+								}else{
+									touchObj.img.src = imgArry[3].img.src; //改变此刻的图片路径
+									touchObj.imgWidth = imgArry[3].imgWidth;
+									touchObj.imgHeight = imgArry[3].imgHeight;
+									touchObj.X = touchX - touchObj.imgWidth / 2;
+									touchObj.Y = touchY - touchObj.imgHeight / 2;
+								}
+								setTimeout(function(){
+									for(var i in obj){
+										if( obj[i].touchs ){
+											if(obj[i].redbao){
+												alert('恭喜获得红包');
+											}
+											obj.splice(i,1);
+										}
+										return;
+									}
+								},500);
+							}
+							break;
+					}
+				}
+				
+				function addObject(){
+					var random = parseInt( Math.random() * 10 );
+					var add_nums = parseInt( Math.random() * 4 );
+					var arry = [];  //保证随机出来的数不重复
+					for (var z = 0 ; z < col ; z++) {
+						arry.push(z);
+					}
+					if( random < 9.5 ){
+						for (var i = 0; i < add_nums ; i++) {
+							obj.push(new ImgObj("img/game-img0.png"));
+							obj[obj.length - 1].imgWidth = imgArry[0].imgWidth;
+							obj[obj.length - 1].imgHeight = imgArry[0].imgHeight;
+							obj[obj.length - 1].redbao = false;
+							random = parseInt( Math.random() * col );
+							obj[obj.length - 1].X = positions[ arry[random] ];
+							obj[obj.length - 1].Y = -obj[obj.length - 1].imgHeight;
+							arry.splice(random);
+						}
+					}else{
+						obj.push(new ImgObj("img/game-img1.png"));
+						obj[obj.length - 1].imgWidth = imgArry[1].imgWidth;
+						obj[obj.length - 1].imgHeight = imgArry[1].imgHeight;
+						obj[obj.length - 1].redbao = true;
+						random = parseInt( Math.random() * col );
+						obj[obj.length - 1].X = positions[random];
+						obj[obj.length - 1].Y = -obj[obj.length - 1].imgHeight;
+					}
+					addObjTime = setTimeout(function(){
+						addObject();
+					},addSpeed);
+				}
+				addObject();
+				drawUpdate();
+			}
+			
+			//位置设置
+			function posiFun(){
+				var colsWidth = parseInt( col * imgArry[0].imgWidth );
+				var space = screenWidth * 10 / 640; //间距; 
+				var starX = ( screenWidth - (colsWidth + space * col) ) / 2;
+				for (var i = 0 ; i < col ; i++) {
+					positions.push( starX + i * ( imgArry[0].imgWidth + space ) );
+				}
+			
+			}
+			function bodySize(){
+				screenWidth = $(window).width();
+				screenHeight = $(window).height();
+				$("html").css('font-size',screenWidth * 40 / designWidth);
+			}
+			bodySize();
+			window.onresize = function(){
+				bodySize();
+			}
+			$('.div-img1').click(function(){
+				imgAdd();
+				$('#myCanvas').attr({'width':screenWidth,'height':screenHeight});
+				$('.div-container1').hide();
+			});
+		</script>
+	</body>
+</html>

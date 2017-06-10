@@ -1,0 +1,212 @@
+﻿@charset "UTF-8";
+/*z中文 */
+/* CSS Document */
+
+#main-frame{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	background: #464549;
+	z-index: 5;
+}
+.top-info{
+	position: relative;
+	width: 100%;
+	margin-bottom: 4px;
+}
+.top-info .bg-div{
+	line-height: 0;
+}
+.top-info .bg-div img{
+	width: 100%;
+}
+.top-info .desk-div{
+	position: absolute;
+	width: 12.8%;
+	left: 4.3%;
+	bottom: -3px;
+	line-height: 0;
+}
+.top-info .desk-div img{
+	width: 100%;
+}
+
+.list-div li{
+	margin-bottom: 2px;
+	width: 93.3%;
+	background: #f0f0f0;
+}
+.list-div li a{
+	position: relative;
+	display: block;
+	padding: 5px 0;
+}
+.list-div li .li-content{
+	position: relative;
+	width: 73.3%;
+	margin-left: 4.7%;
+}
+.list-div li.current{
+	background: #f9df78;
+}
+.list-div li.current .li-content{
+	background: #fff;
+}
+.list-div li.current .challenge-div{
+	display: none !important;
+}
+.list-div li .li-content:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.list-div li .li-content .li-left{
+	float: left;
+	width: 22.7%;
+	text-align: center;
+}
+.list-div li .li-content .li-left span{
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	width: 46px;
+	height: 42px;
+	padding-top: 4px;
+	font: bold 18px "微软雅黑","宋体",arial;
+	color: #9e9da3;
+	line-height: 42px;
+	text-align: center;
+}
+.list-div li:nth-child(1) .li-content .li-left span{
+	background: url(../images/ranking-img1.png) center center no-repeat;
+	background-size: 100% 100%;
+	color: #fff;
+}
+.list-div li:nth-child(2) .li-content .li-left span{
+	background: url(../images/ranking-img2.png) center center no-repeat;
+	background-size: 100% 100%;
+	color: #fff;
+}
+.list-div li:nth-child(3) .li-content .li-left span{
+	background: url(../images/ranking-img3.png) center center no-repeat;
+	background-size: 100% 100%;
+	color: #fff;
+}
+.list-div li .li-content .li-right{
+	float: right;
+	width: 22.7%;
+	font: 16px "微软雅黑","宋体",arial;
+	color: #1f1f1f;
+	line-height: 46px;
+}
+.list-div li .li-content .li-middle{
+	margin: 0 22.7%;
+}
+.list-div li .li-content .li-middle .portrait-div{
+	float: left;
+	width: 46px;
+	line-height: 0;
+}
+.list-div li .li-content .li-middle .portrait-div img{
+	width: 46px;
+	height: 46px;
+	border-radius: 4px;
+}
+.list-div li .li-content .li-middle .name-div{
+	margin-left: 55px;
+	font: 16px "微软雅黑","宋体",arial;
+	color: #464549;
+	line-height: 46px;
+	height: 46px;
+	text-overflow:ellipsis; 
+	overflow:hidden; 
+	white-space:nowrap;
+}
+.list-div li .challenge-div{
+	position: absolute;
+	width: 22%;
+	height: 100%;
+	right: 0;
+	top: 0;
+	display: none;
+}
+.list-div li:nth-child(1) .challenge-div{
+	display: block;
+}
+.list-div li:nth-child(2) .challenge-div{
+	display: block;
+}
+.list-div li:nth-child(3) .challenge-div{
+	display: block;
+}
+.list-div li .challenge-div .challenge-left{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	font: 20px "微软雅黑","宋体",arial;
+	color: #464549;
+	line-height: 56px;
+	text-align: right;
+}
+.list-div li:nth-child(1) .challenge-div .challenge-left{
+	background: #d0343a;
+}
+.list-div li:nth-child(2) .challenge-div .challenge-left{
+	background: #f4c300;
+}
+.list-div li:nth-child(3) .challenge-div .challenge-left{
+	background: #a7cacc;
+}
+.list-div li .challenge-div .challenge-right{
+	position: absolute;
+	width: 25.19%;
+	height: 100%;
+	left: 100%;
+	top: 0;
+	z-index: 5;
+}
+.list-div li:nth-child(1) .challenge-div .challenge-right{
+	background: url(../images/ranking-img4.png) no-repeat;
+	background-size: 100% 100%;
+}
+.list-div li:nth-child(2) .challenge-div .challenge-right{
+	background: url(../images/ranking-img5.png) no-repeat;
+	background-size: 100% 100%;
+}
+.list-div li:nth-child(3) .challenge-div .challenge-right{
+	background: url(../images/ranking-img6.png) no-repeat;
+	background-size: 100% 100%;
+}
+.list-div li .other-div{
+	font: 14px "微软雅黑","宋体",arial;
+	color: #969079;
+	line-height: 56px;
+	text-align: center;
+}
+
+.btn-frame{
+	position: relative;
+	margin-top: -16px;
+}
+.btn-frame .btn-bg{
+	line-height: 0;
+}
+.btn-frame .btn-bg img{
+	width: 100%;
+}
+.btn-frame .btn-div{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 18%;
+	line-height: 0;
+	z-index: 5;
+}
+.btn-frame .btn-div img{
+	width: 100%;
+}

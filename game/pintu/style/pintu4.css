@@ -1,0 +1,190 @@
+﻿@charset "UTF-8";
+/*z中文 */
+/* CSS Document */
+
+#main-frame{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+#game .jigsaw-div0{
+	width: 3.5rem;
+	height: 3.5rem;
+	background: #f00;
+	font: 1rem "微软雅黑","宋体",arial;
+	color: #ccc;
+	line-height: 3.5rem;
+	text-align: center;
+	margin: 0.4rem 0.4rem 0;
+}
+#game .jigsaw-div0 .move-div{
+	cursor: pointer;
+}
+#game .jigsaw-div0.downMove .move-div{
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	perspective: 1000;
+	-webkit-animation: downAnimation 0.2s linear forwards;
+	animation: downAnimation 0.2s linear forwards;
+}
+.jigsaw-div0 .move-div img{
+	display: block;
+	width: 100%;
+}
+#game .jigsaw-list{
+	padding: 0.2rem;
+}
+#game .jigsaw-list .jigsaw-div{
+	float: left;
+	width: 3.5rem;
+	height: 3.5rem;
+	margin: 0.2rem;
+	background: #ff0;
+	font: 1rem "微软雅黑","宋体",arial;
+	color: #ccc;
+	line-height: 3.5rem;
+	text-align: center;
+}
+#game .jigsaw-list .jigsaw-div .move-div{
+	cursor: pointer;
+}
+#game .jigsaw-list .jigsaw-div.upMove .move-div{
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	perspective: 1000;
+	-webkit-animation: upAnimation 0.2s linear forwards;
+	animation: upAnimation 0.2s linear forwards;
+}
+@-webkit-keyframes upAnimation {
+    0%{
+    	-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+    }
+    100%{
+    	-webkit-transform: translate(0,-3.9rem);
+		transform: translate(0,-3.9rem);
+    }
+}
+@keyframes upAnimation {
+    0%{
+    	-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+    }
+    100%{
+    	-webkit-transform: translate(0,-3.9rem);
+		transform: translate(0,-3.9rem);
+    }
+}
+#game .jigsaw-list .jigsaw-div.downMove .move-div{
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	perspective: 1000;
+	-webkit-animation: downAnimation 0.2s linear forwards;
+	animation: downAnimation 0.2s linear forwards;
+}
+@-webkit-keyframes downAnimation {
+    0%{
+    	-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+    }
+    100%{
+    	-webkit-transform: translate(0,3.9rem);
+		transform: translate(0,3.9rem);
+    }
+}
+@keyframes downAnimation {
+    0%{
+    	-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+    }
+    100%{
+    	-webkit-transform: translate(0,3.9rem);
+		transform: translate(0,3.9rem);
+    }
+}
+#game .jigsaw-list .jigsaw-div.leftMove .move-div{
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	perspective: 1000;
+	-webkit-animation: leftAnimation 0.2s linear forwards;
+	animation: leftAnimation 0.2s linear forwards;
+}
+@-webkit-keyframes leftAnimation {
+    0%{
+    	-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+    }
+    100%{
+    	-webkit-transform: translate(-3.9rem,0);
+		transform: translate(-3.9rem,0);
+    }
+}
+@keyframes leftAnimation {
+    0%{
+    	-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+    }
+    100%{
+    	-webkit-transform: translate(-3.9rem,0);
+		transform: translate(-3.9rem,0);
+    }
+}
+#game .jigsaw-list .jigsaw-div.rightMove .move-div{
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	perspective: 1000;
+	-webkit-animation: rightAnimation 0.2s linear forwards;
+	animation: rightAnimation 0.2s linear forwards;
+}
+@-webkit-keyframes rightAnimation {
+    0%{
+    	-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+    }
+    100%{
+    	-webkit-transform: translate(3.9rem,0);
+		transform: translate(3.9rem,0);
+    }
+}
+@keyframes rightAnimation {
+    0%{
+    	-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+    }
+    100%{
+    	-webkit-transform: translate(3.9rem,0);
+		transform: translate(3.9rem,0);
+    }
+}
+.jigsaw-list .jigsaw-div .move-div img{
+	display: block;
+	width: 100%;
+}
+
+#game .btn-div{
+	width: 5rem;
+	margin: 0.2rem auto 0;
+}
+#game .btn-div a{
+	display: block;
+	font: 0.8rem "微软雅黑","宋体",arial;
+	color: #fff;
+	line-height: 1.6rem;
+	text-align: center;
+	background: #00f;
+	border-radius: 1rem;
+}

@@ -1,0 +1,18 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1em;}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+*{padding: 0;margin: 0;}
+img{border: 0;}
+body{font-family:'微软雅黑','宋体', 'helvetica', 'Arial';font-size: 12px;color: #333;height: 100%;width: 100%;line-height: 1em;}
+.body_head a,.body_main_frame a{text-decoration: none;color: #666666;}
+a:link,a:visited{text-decoration:none;}
+a:hover,a:active{text-decoration:none;}
+.clear{clear: both;line-height:0px;height:0px;font-size:0px;zoom: 1;}
+#loading{position: fixed;left: 0;top: 0;width: 100%;height: 100%;font: 16px "微软雅黑","宋体",arial;color: #333;line-height: 30px;text-align: center;z-index: 16;background: #1D2033;;}
+#loadingBox{width: 100%;position: absolute;top: 50%;text-align: center;transform: translateY(-50%);-webkit-transform: translateY(-50%);}
+#loading #loadingBox img{width: 32%;}
+
+/*audio start*/
+/*音乐图标*/
+#audio_btn{position: absolute;right: 0;top: 0;z-index: 200;display: block !important;width: 50px;height: 50px;background-repeat: no-repeat;/*background-repeat: no-repeat;*//*background-size: 100% 100%;*//*background-position: 0px 0px;*/}.loading_background{background-image: url(../img/music_loading.gif);background-size: 30px 30px;opacity: 0.5;background-position: center center;}.loading_yinfu{position: absolute;left: 10px;top: 10px;width: 30px;height:30px;background-image: url(../img/yinfu.png);background-repeat: no-repeat;background-position: center center;}.play_yinfu{background-image: url(../img/music.gif);background-repeat: no-repeat;background-position: center center;background-size: 60px 60px;}.rotate{position: absolute;left: 10px;top: 10px;width: 30px;height: 30px;background-size: 100% 100%;background-image: url(../img/music_off.png);-webkit-animation: rotating 1.2s linear infinite;-moz-animation: rotating 1.2s linear infinite;-o-animation: rotating 1.2s linear infinite;animation: rotating 1.2s linear infinite;}@-webkit-keyframes rotating{from{-webkit-transform: rotate(0deg);} to{-webkit-transform: rotate(360deg);}}@keyframes rotating{from{transform: rotate(0deg);} to{transform: rotate(360deg);}}@-moz-keyframes rotating{from{-moz-transform: rotate(0deg);} to{-moz-transform: rotate(360deg);}}
+/*#audio_btn.off{background-position: 0px -30px;}*/
+.off{background-image: url(../img/music_off.png);background-size: 30px 30px; background-repeat: no-repeat;background-position: center center;}
+/*audio end*/

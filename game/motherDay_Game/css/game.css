@@ -1,0 +1,309 @@
+#zhe{position: fixed;z-index: 100;left: 0;top: 0;bottom: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.7);-webkit-background-size: cover;background-size: cover;display: none;}
+#zheCeng-passOne,#zheCeng-passTwo{position: fixed;z-index: 101;left: 0;top: 0;bottom: 0;width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;display: none;}
+
+.zhe-passOne1{
+	position: absolute;
+	width: 12.1rem;
+	left: 2rem;
+	bottom: 0;
+}
+.zhe-passOne2{
+	position: absolute;
+	width: 11.2rem;
+	left: 2.8rem;
+    top: 3rem;
+}
+.zhe-passOne3{
+	position: absolute;
+	width: 11.025rem;
+	left: 2.8rem;
+    top: 9rem;
+}
+.closeBtn{
+	position: absolute;
+	width: 1.625rem;
+	right: 1.5rem;
+    top: 2rem;
+}
+.zhe-passOne-arrow{
+	position: absolute;
+	width: 1.1rem;
+    left: 7.45rem;
+    bottom: 5rem;
+    animation: arrow 2s ease 0s infinite;
+    -webkit-animation: arrow 2s ease 0s infinite;
+}
+
+/*躲遮罩层   start*/
+.zhe-passTwo1{
+	position: absolute;
+	width: 11.2rem;
+	left: 2.4rem;
+	top: 4rem;
+}
+.zhe-passTwo2{
+	position: absolute;
+	width: 11.925rem;
+	left: 2.0375rem;
+    top: 10rem;
+}
+.zhe-passTwo3{
+	position: absolute;
+	width: 14.375rem;
+	left: 0.8125rem;
+    bottom: 1rem;
+}
+/*躲遮罩层   end*/
+
+#Game{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background: url(../img/bg.jpg) no-repeat center;
+	background-size: cover;
+}
+#pass{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	display: block;
+}
+#pass .passBox{
+	position: absolute;
+	top: 1.34rem;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid black;
+	height: 21.6rem;
+}
+#pass .passBox .pass-one{
+	position: absolute;
+	top: 2%;left: 1.63rem;
+	width: 12.725rem;
+}
+#pass .passBox .pass-two{
+	position: absolute;
+	top: 35%;left: 0.825rem;
+	width: 14.35rem;
+}
+#pass .passBox .pass-three{
+	position: absolute;
+	top: 69%;left: 1.625rem;
+	width: 12.75rem;
+}
+
+/*#game-one start*/
+#game-one{
+	position: absolute;
+	top: 0;left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+#game-one .pass-one-boy{
+	position: absolute;
+	width: 12.925rem;
+	bottom: 0;
+	left: 1.5375rem;
+	display: none;
+}
+#game-one .pass-one-girl{
+	position: absolute;
+	width: 12.925rem;
+	bottom: 0;
+	left: 1.5375rem;
+	display: none;
+}
+#game-one .timer{
+	font-size: 2rem;
+	line-height: 1.5em;
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 10rem;
+}
+#game-one .timeIcon{
+	position: absolute;
+	width: 1.025rem;
+	top: 1rem;
+	left: 2.85rem;
+}
+#game-one .progressBox{
+	width: 10rem;
+    height: 0.5rem;
+	position: absolute;
+    top: 1.1rem;
+    left: 4.3rem;
+	border: 2px solid black;
+	border-radius: 3rem;
+	overflow: hidden;
+}
+#game-one .progressBox .bar{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: red;
+}
+#game-one .pass-one-arrow{
+	position: absolute;
+	width: 1.1rem;
+    right: 1rem;
+    bottom: 2rem;
+}
+/*#game-one end*/
+
+/*#game-two start*/
+#game-two{
+	position: absolute;
+	top: 0;left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+#game-two .icon1{
+	position: absolute;
+	width: 4.85rem;
+	left: -0.5rem;
+    top: 3rem;
+	z-index: 2;
+}
+#game-two .icon2{
+	position: absolute;
+	width: 3.875rem;
+	left: -1rem;
+    top: 18.9rem;
+	z-index: 2;
+}
+#game-two .icon3{
+	position: absolute;
+	width: 3.125rem;
+    right: -0.5rem;
+    top: 15rem;
+	z-index: 2;
+}
+#game-two .icon4{
+	position: absolute;
+	width: 6.375rem;
+	right: -1rem;
+    top: -0.5rem;
+	z-index: 2;
+}
+#game-two .icon5{
+	position: absolute;
+	width: 10.75rem;
+	left: 100%;
+    top: 10.5rem;
+	z-index: 2;
+}
+#game-two .icon6{
+	position: absolute;
+	width: 10.75rem;
+	left: -68%;
+    top: 10.5rem;
+	z-index: 2;
+}
+#game-two .pass-two-boy{
+	position: absolute;
+	width: 12.05rem;
+	height: 12.825rem;
+	background: url(../img/pass-two-boy.png) no-repeat center;
+	background-size: 100% 200%;
+	background-position: 0 0;
+	top: 7rem;
+	left: 2rem;
+	z-index: 1;
+}
+#game-two .left_Btn{
+	position: absolute;
+	width: 4.925rem;
+	bottom: 1rem;
+	left: 1.3rem;
+}
+#game-two .right_Btn{
+	position: absolute;
+	width: 4.925rem;
+	bottom: 1rem;
+	right: 1.3rem;
+}
+@-webkit-keyframes arrow{
+	0%{-webkit-transform: translateY(0px);}
+	100%{-webkit-transform: translateY(25px);}
+}
+@keyframes arrow{
+	0%{transform: translateY(0px);}
+	100%{transform: translateY(25px);}
+}
+.arrow{
+	animation: arrow 2s ease 0s infinite;
+    -webkit-animation: arrow 2s ease 0s infinite;
+}
+
+@-webkit-keyframes icon1Animate{
+	0%{-webkit-transform: translateY(0px) translateX(0px);}
+	50%{-webkit-transform: translateY(10px) translateX(10px);}
+	100%{-webkit-transform: translateY(0px) translateX(0px);}
+}
+@keyframes icon1Animate{
+	0%{transform: translateY(0px) translateX(0px);}
+	50%{transform: translateY(10px) translateX(10px);}
+	100%{transform: translateY(0px) translateX(0px);}
+}
+.icon1Animate{
+	animation: icon1Animate 1s ease 0.2s infinite;
+    -webkit-animation: icon1Animate 1s ease 0.2s infinite;
+}
+
+@-webkit-keyframes icon2Animate{
+	0%{-webkit-transform: translateY(0px) translateX(0px);}
+	50%{-webkit-transform: translateY(-10px) translateX(10px);}
+	100%{-webkit-transform: translateY(0px) translateX(0px);}
+}
+@keyframes icon2Animate{
+	0%{transform: translateY(0px) translateX(0px);}
+	50%{transform: translateY(-10px) translateX(10px);}
+	100%{transform: translateY(0px) translateX(0px);}
+}
+.icon2Animate{
+	animation: icon2Animate 1s ease 0.6s infinite;
+    -webkit-animation: icon2Animate 1s ease 0.6s infinite;
+}
+
+@-webkit-keyframes icon3Animate{
+	0%{-webkit-transform: translateY(0px) translateX(0px);}
+	50%{-webkit-transform: translateY(-10px) translateX(-10px);}
+	100%{-webkit-transform: translateY(0px) translateX(0px);}
+}
+@keyframes icon3Animate{
+	0%{transform: translateY(0px) translateX(0px);}
+	50%{transform: translateY(-10px) translateX(-10px);}
+	100%{transform: translateY(0px) translateX(0px);}
+}
+.icon3Animate{
+	animation: icon3Animate 1s ease 0.3s infinite;
+    -webkit-animation: icon3Animate 1s ease 0.3s infinite;
+}
+
+@-webkit-keyframes icon4Animate{
+	0%{-webkit-transform: translateY(0px) translateX(0px);}
+	50%{-webkit-transform: translateY(10px) translateX(-10px);}
+	100%{-webkit-transform: translateY(0px) translateX(0px);}
+}
+@keyframes icon4Animate{
+	0%{transform: translateY(0px) translateX(0px);}
+	50%{transform: translateY(10px) translateX(-10px);}
+	100%{transform: translateY(0px) translateX(0px);}
+}
+.icon4Animate{
+	animation: icon4Animate 1s ease 0.5s infinite;
+    -webkit-animation: icon4Animate 1s ease 0.5s infinite;
+}
+

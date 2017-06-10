@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>键视加</title>
+<meta name="description" content="九个">
+<meta name="keywords" content="社会">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1">
+<link href="style/reset.css" rel="stylesheet" type="text/css">
+<link href="style/jianshijia.css?v=1.2" rel="stylesheet" type="text/css">
+<script src="js/jquery1.11.0.js" language="javascript" type="text/javascript"></script>
+<script src="js/jianshijia.js?v=1.1" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+<div id="loading-frame">
+	<div class="loading-content">
+		<div class="water"></div>
+	</div>
+</div>
+<div id="home-frame">
+	<div class="top-words">
+		<img src="images/home-top-words.png" />
+	</div>
+	<div class="home-child">
+		<div class="child-frame1">
+			<div class="child-div">
+				<img src="images/home-child-img1.png" />
+			</div>
+			<div class="shade-div">
+				<img src="images/home-shade1.png" />
+			</div>
+		</div>
+		<div class="child-frame2">
+			<div class="child-div">
+				<img src="images/home-child-img2.png" />
+			</div>
+			<div class="shade-div">
+				<img src="images/home-shade2.png" />
+			</div>
+		</div>
+		<div class="child-frame3">
+			<div class="child-div">
+				<img src="images/home-child-img3.png" />
+			</div>
+			<div class="shade-div">
+				<img src="images/home-shade3.png" />
+			</div>
+		</div>
+		<div class="child-frame4">
+			<div class="child-div">
+				<img src="images/home-child-img4.png" />
+			</div>
+			<div class="shade-div">
+				<img src="images/home-shade4.png" />
+			</div>
+		</div>
+	</div>
+	<div class="gestures-frame">
+		<img src="images/home-gestures-ico.png" />
+	</div>
+	<div id="help-div">
+		<a href="javascript:void(0);" class="help-link">
+			<img src="images/help-ico.png" />
+			<span>帮助</span>
+		</a>
+	</div>
+	<div id="home-cover"></div>
+	<div id="help-frame">
+		<a href="javascript:void(0);" class="close-link">
+			<img src="images/close-ico.png" />
+		</a>
+		<div class="help-content">
+			<div class="help-info">看到那些戴着高度近视眼镜的小盆友了吗？他们愁眉苦脸的样子好可怜呢！只要拖动飞过来的云+智能眼镜到小盆友的身上，就可以治好他们的近视，还他们明媚笑容啦！</div>
+			<div class="top-info">
+				长按识别二维码，关注“健视加”公众号，让好成绩上排行榜哦。
+			</div>
+			<div class="qr-code">
+				<img src="images/qr-code.png" />
+			</div>
+		</div>
+		<div class="btn-div">
+			<button id="star-btn"><img src="images/star-btn.png" /></button>
+		</div>
+	</div>
+</div>
+<div id="game-frame">
+	<div id="main-frame">
+		<div id="score-div">
+			<span id="score-span">0</span>
+			<span id="gift-span">0</span>
+		</div>
+		<div id="time-number">
+			<div class="time-content">
+				<span id="total-span">60000</span>
+				<span id="minutes-span">00</span>
+				<span class="line-span">:</span>
+				<span id="seconds-span">30</span>
+				<span class="line-span">:</span>
+				<span id="ms-span">00</span>
+			</div>
+		</div>
+		<div class="classification class1 smiling-face">
+			<div class="child-div">
+				<img src="images/child-img1B.png" />
+			</div>
+			<div class="shade-div">
+				<img src="images/game-shade1.png" />
+			</div>
+		</div>
+		<div class="classification class2 smiling-face">
+			<div class="child-div">
+				<img src="images/child-img2B.png" />
+			</div>
+			<div class="shade-div">
+				<img src="images/game-shade2.png" />
+			</div>
+		</div>
+		<div class="classification class3 smiling-face">
+			<div class="child-div">
+				<img src="images/child-img3B.png" />
+			</div>
+			<div class="shade-div">
+				<img src="images/game-shade3.png" />
+			</div>
+		</div>
+		<div class="classification class4 smiling-face">
+			<div class="child-div">
+				<img src="images/child-img4B.png" />
+			</div>
+			<div class="shade-div">
+				<img src="images/game-shade4.png" />
+			</div>
+		</div>
+		<div class="garbage-list">
+			<ul>
+				<li class="li1">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="cover-div"></div>
+	<div id="end-div">
+		<div class="btn-div">
+			<button id="war-btn2"><img src="images/war-btn.png" /></button>
+			<button id="replay-btn2"><img src="images/replay-btn.png" /></button>
+		</div>
+	</div>
+	<div id="paper-div">
+		<img src="images/paper-ico.png" />
+	</div>
+	<div id="score-frame">
+		<a href="javascript:void(0);" class="close-link">
+			<img src="images/close-ico.png" />
+		</a>
+		<div class="score-content">
+			<div class="score-number">
+				<div class="number-top">
+					<img src="images/score-ico.png" />
+					<span id="number-span">0</span>
+				</div>
+				<div class="number-bottom">
+					<p>你实在是太棒了！</p>
+					<p>拯救了XX个小盆友的眼睛！</p>
+				</div>
+			</div>
+			<div class="list-info">
+				<p>看看你在朋友圈的<span>排名</span>吧！</p>
+				<p>点击<span>重玩</span>拯救更多小盆友！</p>
+			</div>
+			<div class="btn-div">
+				<button id="replay-btn"><img src="images/replay-btn.png" /></button>
+				<button id="war-btn"><img src="images/war-btn.png" /></button>
+			</div>
+		</div>
+	</div>
+	<div id="list-frame">
+		<a href="javascript:void(0);" class="close-link">
+			<img src="images/close-ico.png" />
+		</a> 
+		<div class="list-content">
+			<div class="focus-on">
+				<div class="score-number">
+					<div class="number-top">
+						<img src="images/score-img.png" />
+						<span id="number-span3">0</span>
+					</div>
+				</div>
+				<div class="score-list">
+					<ul>
+						<li>
+							<div class="li-left"><img src="images/crown-ico1.png" /></div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left"><img src="images/crown-ico2.png" /></div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left"><img src="images/crown-ico3.png" /></div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left">4</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left">5</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="omit-div">······</div>
+						</li>
+						<li class="current">
+							<div class="li-left">39</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+						<li>
+							<div class="li-left">40</div>
+							<div class="li-middle">
+								<span class="portrait-span"><img src="images/portrait-img.png" /></span>
+								<span class="name-span">Lucy Rose</span>
+							</div>
+							<div class="li-right">246000</div>
+						</li>
+					</ul>
+				</div>
+				<div class="btn-div">
+					<button id="flaunt-btn1"><img src="images/flaunt-btn.png" /></button>
+				</div>
+				<div class="support-div">
+					汇志传媒技术支持
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="share-frame">
+		<div class="image-div">
+			<img src="images/share-img.png" />
+		</div>
+	</div>
+</div>
+<div id="music">
+    <audio loop="loop" src="images/music.mp3" id="media" preload="preload" controls="controls"></audio>
+</div>
+</body>
+</html>

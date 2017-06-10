@@ -1,0 +1,62 @@
+﻿@charset "UTF-8";
+/*z中文 */
+/* CSS Document */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1em;}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+*{
+	padding: 0;
+	margin: 0;
+}
+img{
+	border: 0;
+}
+
+body {
+	font-family:'微软雅黑','宋体', 'helvetica', 'Arial';
+	font-size: 12px;
+	color: #333;
+	height: 100%;
+	width: 100%;
+	line-height: 1em;
+}
+
+.body_head a,.body_main_frame a {
+	text-decoration: none;
+	color: #666666;
+}
+a:link,a:visited { text-decoration:none;}
+a:hover,a:active  { text-decoration:none;}
+
+.clear {
+	clear: both;
+	line-height:0px;
+	height:0px;
+	font-size:0px;
+	zoom: 1;
+}
+
+#loading{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	font: 16px "微软雅黑","宋体",arial;
+	color: #333;
+	line-height: 30px;
+	text-align: center;
+	z-index: 16;
+	background: #fff;
+}
+#loading table{
+	width: 100%;
+}
+#loading tr td{
+	height: 100%;
+	vertical-align: middle;
+	line-height: 0;
+}
+#loading tr td img{
+	width: 100%;
+}

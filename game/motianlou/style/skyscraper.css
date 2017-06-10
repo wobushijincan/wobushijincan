@@ -1,0 +1,175 @@
+﻿@charset "UTF-8";
+/*z中文 */
+/* CSS Document */
+
+#main-frame{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+#game-content{
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 320px;
+	height: 480px;
+	max-width: 90%;
+	margin-left: -160px;
+	background: #f1f1f1;
+	overflow-y: hidden;
+}
+#score-div{
+	position: absolute;
+	width: 28%;
+	height: 6%;
+	left: 3%;
+	top: 2.5%;
+	background: url(../images/score-bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+#score-div span{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin-left: 33%;
+	padding-top: 2%;
+	width: 60%;
+	font: bold 20px "微软雅黑","宋体",arial;
+	color: #fff;
+	line-height: 30px;
+	text-align: center;
+}
+#gift-span{
+	display: none !important;
+}
+#time-number{
+	position: absolute;
+	width: 28%;
+	height: 6%;
+	right: 3%;
+	top: 2.5%;
+	background: url(../images/time-bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+#time-number .time-content{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin-left: 33%;
+	padding-top: 2%;
+	width: 60%;
+	font: bold 20px "微软雅黑","宋体",arial;
+	color: #fff;
+	line-height: 30px;
+	text-align: center;
+}
+#time-number .time-content #total-span{
+	display: none;
+}
+
+#material-frame{
+	position: absolute;
+	width: 50px;
+	left: 50%;
+	top: -10px;
+	margin-left: -25px;
+	z-index: 9;
+}
+#material-frame .rope-div{
+	position: relative;
+	width: 100%;
+	height: 80px;
+	text-align: center;
+	z-index: 15;
+}
+#material-frame .rope-div .rope-content{
+	width: 6px;
+	height: 80px;
+	background: #f00;
+	margin: 0 auto;
+	-webkit-transform-origin: center top;
+	transform-origin: center top;
+}
+#material-frame .material-div{
+	width: 100%;
+}
+#material-frame .material-content{
+	width: 50px;
+	height: 50px;
+	background: #f60;
+	border-radius: 6px;
+	-webkit-transform-origin: center top;
+	transform-origin: center top;
+}
+
+#mansion-frame{
+	position: absolute;
+	width: 120px;
+	height: 30px;
+	background: #f00;
+	border-radius: 50%;
+	left: 50%;
+	top: 380px;
+	margin-left: -60px;
+}
+#mansion-frame .mansion-content{
+	position: absolute;
+	width: 100%;
+	bottom: 15px;
+	left: 0;
+	-webkit-transform-origin: center top;
+	transform-origin: center top;
+}
+#mansion-frame .mansion-content .mansion-floor{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: #f60;
+	border-radius: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

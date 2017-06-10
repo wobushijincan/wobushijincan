@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>canvas红包</title>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="0" http-equiv="expires">
+<meta content="telephone=no, address=no" name="format-detection">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link href="style/reset.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+@-moz-keyframes chui_shuai{
+	0%{opacity: 0;-moz-transform: rotate(0deg);}
+	50%{opacity: 1;-moz-transform: rotate(-30deg);}
+	100%{opacity: 0;}
+}
+@-webkit-keyframes chui_shuai{
+	0%{opacity: 0;-webkit-transform: rotate(0deg);}
+	50%{opacity: 1;-webkit-transform: rotate(-30deg);}
+	100%{opacity: 0;}
+}
+@-ms-keyframes chui_shuai{
+	0%{opacity: 1;-ms-transform: rotate(0deg);}
+	50%{opacity: 1;-ms-transform: rotate(-30deg);}
+	100%{opacity: 0;}
+}
+@keyframes chui_shuai{
+	0%{opacity: 0;transform: rotate(0deg);}
+	50%{opacity: 1;transform: rotate(-30deg);}
+	100%{opacity: 0;}
+}
+.chui{ -moz-animation: chui_shuai 0.2s linear forwards;-webkit-animation: chui_shuai 0.2s linear forwards;-ms-animation: chui_shuai 0.2s linear forwards;animation: chui_shuai 0.2s linear forwards;
+	-moz-transform-origin: 100% 100%;-webkit-transform-origin: 100% 100%; -ms-transform-origin: 100% 100%;transform-origin: 100% 100%;}
+@-moz-keyframes coin_tou{
+	0%{opacity: 0;-moz-transform: translateY(0px)}
+	50%{opacity: 1;-moz-transform: translateY(-60px);}
+	100%{opacity: 0;-moz-transform: translateY(-60px);}
+}
+@-webkit-keyframes coin_tou{
+	0%{opacity: 0;-webkit-transform: translateY(0px)}
+	50%{opacity: 1;-webkit-transform: translateY(-60px);}
+	100%{opacity: 0;-webkit-transform: translateY(-60px);}
+}
+@-ms-keyframes coin_tou{
+	0%{opacity: 0;-ms-transform: translateY(0px)}
+	50%{opacity: 1;-ms-transform: translateY(-60px);}
+	100%{opacity: 0;-ms-transform: translateY(-60px);}
+}
+@keyframes coin_tou{
+	0%{opacity: 0;transform: translateY(0px)}
+	50%{opacity: 1;transform: translateY(-60px);}
+	100%{opacity: 0;transform: translateY(-60px);}
+}
+.coin{-moz-animation: coin_tou 0.2s linear ;-webkit-animation: coin_tou 0.2s linear ;-ms-animation: coin_tou 0.2s linear;animation: coin_tou 0.2s linear;}
+
+#frame{width: 100%;position: relative;overflow: hidden;background: url(images/bg.jpg)no-repeat center;background-size: cover;}
+#frame img{display: block;width: 100%;}
+#frame div{position: absolute;}
+.frameBox{width: 100%;height: 100%;}
+.gameBg{width: 100%;top: 22%;left: 0;}
+.gameBg ul{width: 300px;height: 300px;margin: 0 auto;overflow: hidden;background: #916301;}
+.gameBg ul li{width: 71.25px;height: 71.25px;float: left;margin-left: 3px;margin-top: 3px;border-radius: 6px;-webkit-border-radius: 6px;overflow: hidden;background: #FFFFDD;}
+#canvasBox{top: 22%;left: 0;width: 100%;}
+#mycanvas{margin: 0 auto;display: block;-ms-touch-action: none;touch-action: none;-webkit-touch-action: none;}
+#canvasBox span{position: absolute;display: none;}
+.chuizi{ width: 50px;left: 50%;margin-top: -16px;margin-left: 10px;-moz-transform: rotate(10deg);-webkit-transform: rotate(10deg);-ms-transform: rotate(10deg);transform: rotate(10deg);opacity: 0;}
+.coin{width: 30px;z-index: 5;margin-top: 10px;margin-left: 5px;}
+</style>
+</head>
+<body>
+	<div id="frame">
+		<div class="frameBox">
+			<div class="gameBg">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div id="canvasBox">
+				<canvas id="mycanvas" width="300px" height="300px" touch-action="none"></canvas>
+				<span class="chuizi chui"><img src="images/sinker.png"/></span>
+				<span class="coin"><img src="images/coin.png" /></span>
+			</div>
+		</div>
+	</div>
+<script src="js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	$('body').on('touchmove', function (event) {
+	    event.preventDefault();
+	});
+	bodySize();
+	window.onresize = function(){
+		bodySize();
+	}
+	function bodySize(){
+		$("#frame").height( $(window).height() );
+	}
+	
+})
+window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+}, false);//消除苹果对点击延迟需要引进fastclick
+//margin-left、margin-top = 3px;样式里面已经设置好
+//li的宽、高为  71.25px;
+var liWidth = $(".gameBg ul li").width();
+var li_margin = parseInt($(".gameBg ul li").css("margin-left"));
+var distance = liWidth + li_margin;
+var col = 4; // 4列 
+var row = 4; // 4行
+var index = [];
+function foodObj( imgSrc ){
+	this.img = new Image();
+	this.width = 53;
+	this.height = 53;
+	this.margin_left = 12.125;//绘画时的间距
+	this.margin_top = 12.125;//绘画时的间距
+	this.img.src = imgSrc;
+	this.place = 0;//记录当前的位置
+}
+var food1 = new foodObj( 'images/food1.png' );
+var food2 = new foodObj( 'images/food2.png' );
+var food3 = new foodObj( 'images/food3.png' );
+var food4 = new foodObj( 'images/food4.png' );
+var food5 = new foodObj( 'images/food5.png' );
+var food6 = new foodObj( 'images/food6.png' );
+
+var foods = [ food1 , food2 , food3 , food4 , food5 , food6 ];
+var distances = 0;
+function distanfun(){//位置坐标
+	distances = [
+		[ 0 , 0 ] , [  distance , 0 ] , [ 2 * distance , 0 ] , [ 3 * distance , 0 ],
+		[ 0 , distance ] , [  distance , distance ] , [ 2 * distance , distance ] , [ 3 * distance , distance ],
+		[ 0 , distance * 2 ] , [  distance , distance * 2 ] , [ 2 * distance , distance * 2 ] , [ 3 * distance , distance * 2 ],
+		[ 0 , distance * 3 ] , [  distance , distance * 3 ] , [ 2 * distance , distance * 3 ] , [ 3 * distance , distance * 3 ]
+	]
+}
+window.onload = function(){
+	distanfun();
+	var canvas = document.getElementById("mycanvas");
+	var cxt = canvas.getContext("2d");
+	draw( cxt );
+	document.getElementById("mycanvas").onclick = function(e){
+		var touchFoodX = e.offsetX;
+		var touchFoodY = e.offsetY;
+		for( var i = 0 ; i < foods.length ; i ++){
+			if( distances[ foods[i].place ][0] < touchFoodX && touchFoodX < distances[ foods[i].place ][0] + distance && distances[ foods[i].place ][1] < touchFoodY && touchFoodY < distances[ foods[i].place ][1] + distance ){
+				console.log( "S" );
+				$(".chuizi,.coin").css({
+					"left" : touchFoodX,
+					"top" : touchFoodY
+				});
+				$(".chuizi,.coin").css("display","block");
+//				var money = Math.floor( Math.random() * 100 );
+//				switch (true){
+//					case (0 < money && money < 60):console.log('0.5 ' + money);
+//						break;
+//					case (60 <= money && money < 85):console.log('5 ' + money);
+//						break;
+//					case (85 <= money && money < 95):console.log('10 ' + money);
+//						break;
+//					case (95 <= money && money < 100):console.log('100 ' + money);
+//						break;
+//					default:
+//						break;
+//				}
+				cxt.clearRect( distances[ foods[i].place ][0] , distances[ foods[i].place ][1] , distance , distance);
+				setTimeout(function(){
+					$(".chuizi,.coin").css("display","none");
+				},200)
+			}
+		}
+	}	
+	setInterval(function(){
+		draw( cxt );
+	},1000)
+}
+
+function placeindex(){   //使其6不同的位置
+	var randomNums = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+	var new_randomNum = [];
+	for( var i = 0 ; i < 6 ; i++ ){
+		var index = Math.floor( Math.random() * randomNums.length );
+		new_randomNum.push( randomNums[index] );
+		randomNums.splice( index , 1 );
+	}
+	return new_randomNum;
+}
+function draw( cxt ){
+	cxt.clearRect(0,0,300,300);
+	var randomNum = placeindex();
+	for( var i = 0 ; i < foods.length ; i++ ){
+		foods[i].place = randomNum[i];//将6个不同的位置赋给每个食物；使其在画布上面位置不同
+		cxt.beginPath();
+		cxt.drawImage( foods[i].img , distances[randomNum[i]][0] + foods[i].margin_left , distances[randomNum[i]][1] + foods[i].margin_top , foods[i].width , foods[i].height );
+		cxt.closePath();
+	}
+}
+</script>
+</body>
+</html>

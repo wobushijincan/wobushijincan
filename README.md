@@ -7,63 +7,63 @@
 ### 知识点：
 > ###预加载：懒加载也就是延迟加载。
 > 原理：
-1)首先，不要将图片地址放到src属性中，而是放到其它属性(data-original)中。
-2)页面加载完成后，根据scrollTop判断图片是否在用户的视野内，如果在，则将data-original属性中的值取  出存放到src属性中。
+- 首先，不要将图片地址放到src属性中，而是放到其它属性(data-original)中。
+- 页面加载完成后，根据scrollTop判断图片是否在用户的视野内，如果在，则将data-original属性中的值取  出存放到src属性中。
 3)在滚动事件中重复判断图片是否进入视野，如果进入，则将data-original属性中的值取出存放到src属性中。
 实现：
-1、用CSS和JavaScript实现预加载
-2、仅使用JavaScript实现预加载
-3、使用Ajax实现预加载
+- 用CSS和JavaScript实现预加载
+- 仅使用JavaScript实现预加载
+- 使用Ajax实现预加载
 
 
 常用代码：①
 ```
-    function preloadimages(arr){   
-        var newimages=[], loadedimages=0
-        var postaction=function(){}  //此处增加了一个postaction函数
-        var arr=(typeof arr!="object")? [arr] : arr
-        function imageloadpost(){
-            loadedimages++
-            if (loadedimages==arr.length){
-                postaction(newimages) //加载完成用我们调用postaction函数并将newimages数组做为参数传递进去
-            }
-        }
-        for (var i=0; i<arr.length; i++){
-            newimages[i]=new Image()
-            newimages[i].src=arr[i]
-            newimages[i].onload=function(){
-                imageloadpost()
-            }
-            newimages[i].onerror=function(){
-                imageloadpost()
-            }
-        }
-        return { //此处返回一个空白对象的done方法
-            done:function(f){
-                postaction=f || postaction
-            }
+function preloadimages(arr){   
+    var newimages=[], loadedimages=0
+    var postaction=function(){}  //此处增加了一个postaction函数
+    var arr=(typeof arr!="object")? [arr] : arr
+    function imageloadpost(){
+        loadedimages++
+        if (loadedimages==arr.length){
+            postaction(newimages) //加载完成用我们调用postaction函数并将newimages数组做为参数传递进去
         }
     }
+    for (var i=0; i<arr.length; i++){
+        newimages[i]=new Image()
+        newimages[i].src=arr[i]
+        newimages[i].onload=function(){
+            imageloadpost()
+        }
+        newimages[i].onerror=function(){
+            imageloadpost()
+        }
+    }
+    return { //此处返回一个空白对象的done方法
+        done:function(f){
+            postaction=f || postaction
+        }
+    }
+}
 ```
 
 常用代码2：
 ```
-  	function loadImage(url, callback){     
-  	    var img = new Image();
-  	    img.onload=function(){
-  	        img.onload = null;
-  	        callback(img);
-  	    }
-  	    img.src = url;
-  	}
-  	function loadOther(callback){
-  		var len=$('.loaded').length;
-  		for(var i=0;i<len;i++){		 	
-  			var url=$('.loaded').eq(i).attr("src2");
-  	 		$('.loaded').eq(i).attr("src",url);
-  		}
-  	}
-  	loadImage($(".img").attr('src'),loadOther);
+function loadImage(url, callback){     
+    var img = new Image();
+    img.onload=function(){
+        img.onload = null;
+        callback(img);
+    }
+    img.src = url;
+}
+function loadOther(callback){
+	var len=$('.loaded').length;
+	for(var i=0;i<len;i++){		 	
+		var url=$('.loaded').eq(i).attr("src2");
+ 		$('.loaded').eq(i).attr("src",url);
+	}
+}
+loadImage($(".img").attr('src'),loadOther);
 ```
 
 

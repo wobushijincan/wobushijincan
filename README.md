@@ -14,51 +14,54 @@
 
 
 常用代码：①
-`function preloadimages(arr){   
+```
+    function preloadimages(arr){   
         var newimages=[], loadedimages=0
-      var postaction=function(){}  //此处增加了一个postaction函数
-    var arr=(typeof arr!="object")? [arr] : arr
-    function imageloadpost(){
-        loadedimages++
-        if (loadedimages==arr.length){
-            postaction(newimages) //加载完成用我们调用postaction函数并将newimages数组做为参数传递进去
+        var postaction=function(){}  //此处增加了一个postaction函数
+        var arr=(typeof arr!="object")? [arr] : arr
+        function imageloadpost(){
+            loadedimages++
+            if (loadedimages==arr.length){
+                postaction(newimages) //加载完成用我们调用postaction函数并将newimages数组做为参数传递进去
+            }
+        }
+        for (var i=0; i<arr.length; i++){
+            newimages[i]=new Image()
+            newimages[i].src=arr[i]
+            newimages[i].onload=function(){
+                imageloadpost()
+            }
+            newimages[i].onerror=function(){
+                imageloadpost()
+            }
+        }
+        return { //此处返回一个空白对象的done方法
+            done:function(f){
+                postaction=f || postaction
+            }
         }
     }
-    for (var i=0; i<arr.length; i++){
-        newimages[i]=new Image()
-        newimages[i].src=arr[i]
-        newimages[i].onload=function(){
-            imageloadpost()
-        }
-        newimages[i].onerror=function(){
-            imageloadpost()
-        }
-    }
-    return { //此处返回一个空白对象的done方法
-        done:function(f){
-            postaction=f || postaction
-        }
-    }
-}`
+```
 
 常用代码2：
-  `
-				function loadImage(url, callback){     
-	    var img = new Image();
-	    img.onload=function(){
-	        img.onload = null;
-	        callback(img);
-	    }
-	    img.src = url;
-	}
-	function loadOther(callback){
-		var len=$('.loaded').length;
-		for(var i=0;i<len;i++){		 	
-			var url=$('.loaded').eq(i).attr("src2");
-	 		$('.loaded').eq(i).attr("src",url);
-		}
-	}
-	loadImage($(".img").attr('src'),loadOther);`
+```
+  	function loadImage(url, callback){     
+  	    var img = new Image();
+  	    img.onload=function(){
+  	        img.onload = null;
+  	        callback(img);
+  	    }
+  	    img.src = url;
+  	}
+  	function loadOther(callback){
+  		var len=$('.loaded').length;
+  		for(var i=0;i<len;i++){		 	
+  			var url=$('.loaded').eq(i).attr("src2");
+  	 		$('.loaded').eq(i).attr("src",url);
+  		}
+  	}
+  	loadImage($(".img").attr('src'),loadOther);
+```
 
 
 

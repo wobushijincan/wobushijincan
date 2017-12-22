@@ -1,350 +1,1049 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta></head><body><style>
-          html,body,div,p{margin:0;padding:0}
-          body{font-size:14px;font-family:"microsoft yahei";background-color:#ffffff}
-          table{border-collapse:collapse;border-spacing:0;table-layout:fixed}
-          th,td{font-size:14px;padding:0}
-          a{text-decoration:none}
-          img{border:0 none}
-          .blue{text-decoration:none;color:#3c3d5d}
-          .chead{width:1002px}
-          .chead .logo{width:698px;height:90px}
-          .chead .txt{width:152px;height:90px}
-          .column{width:1002px;line-height:28px;border:1px solid #dedede}
-          .column .hbox{width:185px;height:154px}
-          .column .head{display:block;background-color:#fafafa}
-          .column .box{width:100%;background-color:#ffffff;border-top:2px solid #f2f3f5}
-          .column .box1{width:100%;word-wrap:break-word;color:#ffffff;background-color:#3f4160}
-          .column .box2{width:100%;background-color:#f8f9fa}
-          .column .tba{width:940px;padding:0 30px 15px}
-          .column .tbb{width:940px;padding:0 30px}
-          .column .tb1{width:900px;line-height:28px;color:#333333;word-break:break-all;padding:0 20px}
-          .column .tb2{width:430px;padding:0 20px}
-          .column .tb3{width:900px;padding:15px 20px 15px 0}
-          .column .gray,.column .gray2{color:#999999;word-break:break-all}
-          .column .gray2{color:#666666}
-          .column .plate1,.column .plate2{width:430px;height:54px;font-size:16px;font-weight:bold;color:#818ba3}
-          .column .plate1{width:900px;padding:0 50px}
-          .column .plate1 .f16{font-size:14px;font-weight:normal;color:#333333}
-          .column .plate1 .f12{font-size:12px;font-weight:normal;color:#999999}
-          .column .keys,.column .keys2{width:85px;line-height:28px;color:#666666}
-          .column .keys2{width:110px}
-          .column .txt1,.column .txt2,.column .txt3{width:815px;line-height:28px;color:#333333;word-break:break-all}
-          .column .txt2{width:345px}
-          .column .txt3{width:auto;max-width:815px;font-size:14px;font-weight:bold}
-          .column .txt4{width:305px;color:#ffffff;word-break:break-all}
-          .column .infr{width:767px;color:#ffffff;table-layout:auto}
-          .column .vam,.column .grcha{vertical-align:middle;margin-left:5px}
-          .column .box1 .vam{margin-right:5px;margin-left:0}
-          .column .name{font-size:24px;padding-bottom:18px}
-          .column .icard{color:#a1a3ae;padding-bottom:18px}
-          .column .con{border-top:1px dotted #ddd}
-          .column .pr20{width:225px;padding-right:20px}
-          .column .time{width:120px;line-height:28px;color:#666666;padding-left:20px}
-          .column .rtbox{width:765px;line-height:28px;color:#333333;padding:0 20px 0 15px;word-break:break-all}
-          .column .hai,.column .guan{line-height:18px;font-size:12px;color:#ffffff;vertical-align:text-top;margin-left:5px;padding:1px 3px;background-color:#3cbe7f;border-radius:2px}
-          .column .guan{background-color:#ff9f20}
-          .column .tag{display:inline-block;word-break:break-all;#display:inline;#zoom:1}
-          .column .all{color:#666;padding:10px 20px;background-color:#fafafa}
-          .column .tit{width:900px;height:40px;color:#666666;padding:0 20px;background-color:#f5f5f5}
-          .column .p15{padding:15px 0}
-          .column .p5{display:inline-block;color:#666666;padding:0 5px;#display:inline;#zoom:1}
-          .column .cell .skill{width:165px;text-align:right;padding-right:15px}
-          .column .cell .skbg,.column .cell .skco{display:inline-block;width:245px;height:18px;line-height:18px;font-size:12px;color:#ffffff;vertical-align:top;margin-top:6px;background-color:#dddddd;border-radius:20px;#display:inline;#zoom:1}
-          .column .cell .skco{width:235px;font-style:normal;margin-top:0;padding-left:10px;background-color:#ff9f20;z-index:3}
-          .column .sl .skco{width:173px}
-          .column .lh .skco{width:112px}
-          .column .yb .skco{width:51px}
-          .column .fbox strong{font-size:14px;font-weight:bold}
-          .column .cha{font-size:12px;font-weight:normal;color:#00457d;margin-left:5px}
-          .column .cha:hover{color:#ff6000}
-          .column .email{width:330px}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+</head>
+<body>
+<style>
+    html, body, div, p {
+        margin: 0;
+        padding: 0
+    }
 
-          .eng td,.eng .txt3,.eng .fbox strong{font-size:13px;font-family:'Arial'}
-          .eng .txt1,.eng .rtbox,.eng .phd{width:775px;font-size:13px;font-family:'Arial';line-height:28px}
-          .eng .txt2{width:305px}
-          .eng .txt4{width:245px}
-          .eng .cell .txt3{width:120px}
-          .eng .time,.eng .keys{width:110px;font-size:13px;text-align:right}
-          .eng .cell .skill{width:130px}
-          .eng .phd{padding-left:145px}
-          .eng .keys{padding-right:15px}
-          .eng .pr20{width:205px}
-          .eng .pr20 .keys{width:100px}
-          .eng .email{width:270px}
-        </style><table cellpadding="0" cellspacing="0" align="center" bgcolor="#fff" class="column"><tbody><tr><td valign="top"><table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box1"><tbody><tr>
-<td class="hbox" align="middle"><img src="http://img01.51jobcdn.com/im/2016/resume/man.png" width="85" height="104" class="head"></td>
-<td><table cellspacing="0" cellpadding="0" border="0" class="infr"><tbody>
-<tr>
-<td colspan="2" class="name">黄金灿</td>
-<td align="right" class="icard">
-                    ID:311004430</td>
-</tr>
-<tr>
-<td valign="top">
-<img class="vam" src="http://img01.51jobcdn.com/im/2016/resume/y1.png" width="20" height="20">目前正在找工作</td>
-<td valign="top">
-<img class="vam" src="http://img01.51jobcdn.com/im/2016/resume/y2.png" width="20" height="20">13433979203</td>
-<td valign="top"><table cellspacing="0" cellpadding="0" border="0" class="email"><tbody><tr>
-<td valign="top" width="25"><img class="vam" src="http://img01.51jobcdn.com/im/2016/resume/y3.png" width="20" height="20"></td>
-<td valign="top" class="txt4">497838208@qq.com</td>
-</tr></tbody></table></td>
-</tr>
-<tr><td valign="top" colspan="3"><p><img class="vam" src="http://img01.51jobcdn.com/im/2016/resume/y4.png" width="20" height="20">男<span class="p5">|</span>25 岁 (1991/12/08)<span class="p5">|</span>现居住广州-白云区<span class="p5">|</span>3年工作经验
-                    </p></td></tr>
-</tbody></table></td>
-</tr></tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box2"><tbody><tr><td class="tba"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="tb2"><table cellspacing="0" cellpadding="0" border="0">
-<thead style="height:0"><tr>
-<td valign="top" class="keys"></td>
-<td valign="top" class="txt2"></td>
-</tr></thead>
-<tbody>
-<tr><td colspan="2" class="plate2">最近工作</td></tr>
-<tr>
-<td valign="top" class="keys">职位：</td>
-<td valign="top" class="txt2">Web前端开发</td>
-</tr>
-<tr>
-<td valign="top" class="keys">公司：</td>
-<td valign="top" class="txt2">广州瓷肌有限公司</td>
-</tr>
-<tr>
-<td valign="top" class="keys">行业：</td>
-<td valign="top" class="txt2">互联网/电子商务</td>
-</tr>
-</tbody>
-</table></td>
-<td valign="top" class="tb2"><table cellspacing="0" cellpadding="0" border="0">
-<thead style="height:0"><tr>
-<td valign="top" class="keys"></td>
-<td valign="top" class="txt2"></td>
-</tr></thead>
-<tbody>
-<tr><td colspan="2" class="plate2">最高学历/学位</td></tr>
-<tr>
-<td valign="top" class="keys">专业：</td>
-<td valign="top" class="txt2">计算机工程</td>
-</tr>
-<tr>
-<td valign="top" class="keys">学校：</td>
-<td valign="top" class="txt2">广东轻工职业技术学院</td>
-</tr>
-<tr>
-<td valign="top" class="keys">学历/学位：</td>
-<td valign="top" class="txt2">大专</td>
-</tr>
-</tbody>
-</table></td>
-</tr></tbody></table></td></tr></tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box"><tbody><tr><td class="plate1">
-              目前年收入
-              <span>&nbsp;10.8万元</span><span class="f12">（包含基本工资、补贴、奖金、股权收益等）</span>
-</td></tr></tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box"><tbody>
-<tr><td class="plate1">求职意向</td></tr>
-<tr><td class="tba"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0">
-<thead style="height:0"><tr>
-<td valign="top" class="keys"></td>
-<td valign="top" class="txt1"></td>
-</tr></thead>
-<tbody><tr>
-<td valign="top" class="keys">个人标签：</td>
-<td valign="top" class="txt1">
-<span class="tag">html5&nbsp;</span><span class="tag">css3&nbsp;</span><span class="tag">vue全家桶&nbsp;</span><span class="tag">模块化&nbsp;</span><span class="tag">jQuery&nbsp;</span><span class="tag">原生javascript&nbsp;</span><span class="tag">webpack&nbsp;</span><span class="tag">gulp</span>
-</td>
-</tr></tbody>
-</table></td></tr>
-<tr>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">期望薪资：</td>
-<td valign="top" class="txt2">10000-14999
-                                            元/月
-                                          </td>
-</tr></tbody></table></td>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">地点：</td>
-<td valign="top" class="txt2"><span class="tag">广州</span></td>
-</tr></tbody></table></td>
-</tr>
-<tr>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">职能：</td>
-<td valign="top" class="txt2"><span class="tag">Web前端开发</span></td>
-</tr></tbody></table></td>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">行业：</td>
-<td valign="top" class="txt2"><span class="tag">计算机软件</span></td>
-</tr></tbody></table></td>
-</tr>
-<tr>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">到岗时间：</td>
-<td valign="top" class="txt2">1周内</td>
-</tr></tbody></table></td>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">工作类型：</td>
-<td valign="top" class="txt2">全职</td>
-</tr></tbody></table></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0">
-<thead style="height:0"><tr>
-<td valign="top" class="keys"></td>
-<td valign="top" class="txt1"></td>
-</tr></thead>
-<tbody><tr>
-<td valign="top" class="keys">自我评价：</td>
-<td valign="top" class="txt1">精通HTML+CSS网页布局与样式，了解HTML5与CSS3.0，掌握css预处理器框架Sass；<br>精通原生Javascript，能脱离jQuery等类库编码；<br>熟练掌握knockout、vue等js框架，能运用模块化、面向对象的方式编程；<br>熟练使用gulp、webpack自动化构建工具；<br>开发过功能全面的基础类库，如vk.js；<br>自主学习能力强，善于思考问题，寻求各种方式解决问题。<br>个人博客：<a href="https://home.cnblogs.com/u/wobushijincan/">https://home.cnblogs.com/u/wobushijincan/</a></td>
-</tr></tbody>
-</table></td></tr>
-</tbody></table></td></tr>
-</tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box"><tbody>
-<tr><td class="plate1">工作经验</td></tr>
-<tr><td class="tbb"><table cellspacing="0" cellpadding="0" border="0">
-<tr><td class="p15"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2016/3-至今</td>
-<td valign="top" class="rtbox">
-<strong class="txt3">Web前端开发</strong><span class="p5">|</span><span>网站前端组</span>
-</td>
-</tr>
-<tr><td class="phd tb1" colspan="2">
-<span>广州瓷肌有限公司</span><span class="gray">&nbsp;[1年4个月]
+    body {
+        font-size: 14px;
+        font-family: "microsoft yahei";
+        background-color: #ffffff
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        table-layout: fixed
+    }
+
+    th, td {
+        font-size: 14px;
+        padding: 0
+    }
+
+    a {
+        text-decoration: none
+    }
+
+    img {
+        border: 0 none
+    }
+
+    .blue {
+        text-decoration: none;
+        color: #3c3d5d
+    }
+
+    .chead {
+        width: 1002px
+    }
+
+    .chead .logo {
+        width: 698px;
+        height: 90px
+    }
+
+    .chead .txt {
+        width: 152px;
+        height: 90px
+    }
+
+    .column {
+        width: 1002px;
+        line-height: 28px;
+        border: 1px solid #dedede
+    }
+
+    .column .hbox {
+        width: 185px;
+        height: 154px
+    }
+
+    .column .head {
+        display: block;
+        background-color: #fafafa
+    }
+
+    .column .box {
+        width: 100%;
+        background-color: #ffffff;
+        border-top: 2px solid #f2f3f5
+    }
+
+    .column .box1 {
+        width: 100%;
+        word-wrap: break-word;
+        color: #ffffff;
+        background-color: #3f4160
+    }
+
+    .column .box2 {
+        width: 100%;
+        background-color: #f8f9fa
+    }
+
+    .column .tba {
+        width: 940px;
+        padding: 0 30px 15px
+    }
+
+    .column .tbb {
+        width: 940px;
+        padding: 0 30px
+    }
+
+    .column .tb1 {
+        width: 900px;
+        line-height: 28px;
+        color: #333333;
+        word-break: break-all;
+        padding: 0 20px
+    }
+
+    .column .tb2 {
+        width: 430px;
+        padding: 0 20px
+    }
+
+    .column .tb3 {
+        width: 900px;
+        padding: 15px 20px 15px 0
+    }
+
+    .column .gray, .column .gray2 {
+        color: #999999;
+        word-break: break-all
+    }
+
+    .column .gray2 {
+        color: #666666
+    }
+
+    .column .plate1, .column .plate2 {
+        width: 430px;
+        height: 54px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #818ba3
+    }
+
+    .column .plate1 {
+        width: 900px;
+        padding: 0 50px
+    }
+
+    .column .plate1 .f16 {
+        font-size: 14px;
+        font-weight: normal;
+        color: #333333
+    }
+
+    .column .plate1 .f12 {
+        font-size: 12px;
+        font-weight: normal;
+        color: #999999
+    }
+
+    .column .keys, .column .keys2 {
+        width: 85px;
+        line-height: 28px;
+        color: #666666
+    }
+
+    .column .keys2 {
+        width: 110px
+    }
+
+    .column .txt1, .column .txt2, .column .txt3 {
+        width: 815px;
+        line-height: 28px;
+        color: #333333;
+        word-break: break-all
+    }
+
+    .column .txt2 {
+        width: 345px
+    }
+
+    .column .txt3 {
+        width: auto;
+        max-width: 815px;
+        font-size: 14px;
+        font-weight: bold
+    }
+
+    .column .txt4 {
+        width: 305px;
+        color: #ffffff;
+        word-break: break-all
+    }
+
+    .column .infr {
+        width: 767px;
+        color: #ffffff;
+        table-layout: auto
+    }
+
+    .column .vam, .column .grcha {
+        vertical-align: middle;
+        margin-left: 5px
+    }
+
+    .column .box1 .vam {
+        margin-right: 5px;
+        margin-left: 0
+    }
+
+    .column .name {
+        font-size: 24px;
+        padding-bottom: 18px
+    }
+
+    .column .icard {
+        color: #a1a3ae;
+        padding-bottom: 18px
+    }
+
+    .column .con {
+        border-top: 1px dotted #ddd
+    }
+
+    .column .pr20 {
+        width: 225px;
+        padding-right: 20px
+    }
+
+    .column .time {
+        width: 120px;
+        line-height: 28px;
+        color: #666666;
+        padding-left: 20px
+    }
+
+    .column .rtbox {
+        width: 765px;
+        line-height: 28px;
+        color: #333333;
+        padding: 0 20px 0 15px;
+        word-break: break-all
+    }
+
+    .column .hai, .column .guan {
+        line-height: 18px;
+        font-size: 12px;
+        color: #ffffff;
+        vertical-align: text-top;
+        margin-left: 5px;
+        padding: 1px 3px;
+        background-color: #3cbe7f;
+        border-radius: 2px
+    }
+
+    .column .guan {
+        background-color: #ff9f20
+    }
+
+    .column .tag {
+        display: inline-block;
+        word-break: break-all;
+        #display: inline;
+        #zoom: 1
+    }
+
+    .column .all {
+        color: #666;
+        padding: 10px 20px;
+        background-color: #fafafa
+    }
+
+    .column .tit {
+        width: 900px;
+        height: 40px;
+        color: #666666;
+        padding: 0 20px;
+        background-color: #f5f5f5
+    }
+
+    .column .p15 {
+        padding: 15px 0
+    }
+
+    .column .p5 {
+        display: inline-block;
+        color: #666666;
+        padding: 0 5px;
+        #display: inline;
+        #zoom: 1
+    }
+
+    .column .cell .skill {
+        width: 165px;
+        text-align: right;
+        padding-right: 15px
+    }
+
+    .column .cell .skbg, .column .cell .skco {
+        display: inline-block;
+        width: 245px;
+        height: 18px;
+        line-height: 18px;
+        font-size: 12px;
+        color: #ffffff;
+        vertical-align: top;
+        margin-top: 6px;
+        background-color: #dddddd;
+        border-radius: 20px;
+        #display: inline;
+        #zoom: 1
+    }
+
+    .column .cell .skco {
+        width: 235px;
+        font-style: normal;
+        margin-top: 0;
+        padding-left: 10px;
+        background-color: #ff9f20;
+        z-index: 3
+    }
+
+    .column .sl .skco {
+        width: 173px
+    }
+
+    .column .lh .skco {
+        width: 112px
+    }
+
+    .column .yb .skco {
+        width: 51px
+    }
+
+    .column .fbox strong {
+        font-size: 14px;
+        font-weight: bold
+    }
+
+    .column .cha {
+        font-size: 12px;
+        font-weight: normal;
+        color: #00457d;
+        margin-left: 5px
+    }
+
+    .column .cha:hover {
+        color: #ff6000
+    }
+
+    .column .email {
+        width: 330px
+    }
+
+    .eng td, .eng .txt3, .eng .fbox strong {
+        font-size: 13px;
+        font-family: 'Arial'
+    }
+
+    .eng .txt1, .eng .rtbox, .eng .phd {
+        width: 775px;
+        font-size: 13px;
+        font-family: 'Arial';
+        line-height: 28px
+    }
+
+    .eng .txt2 {
+        width: 305px
+    }
+
+    .eng .txt4 {
+        width: 245px
+    }
+
+    .eng .cell .txt3 {
+        width: 120px
+    }
+
+    .eng .time, .eng .keys {
+        width: 110px;
+        font-size: 13px;
+        text-align: right
+    }
+
+    .eng .cell .skill {
+        width: 130px
+    }
+
+    .eng .phd {
+        padding-left: 145px
+    }
+
+    .eng .keys {
+        padding-right: 15px
+    }
+
+    .eng .pr20 {
+        width: 205px
+    }
+
+    .eng .pr20 .keys {
+        width: 100px
+    }
+
+    .eng .email {
+        width: 270px
+    }
+</style>
+<table cellpadding="0" cellspacing="0" align="center" bgcolor="#fff" class="column">
+    <tbody>
+    <tr>
+        <td valign="top">
+            <table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box1">
+                <tbody>
+                <tr>
+                    <td class="hbox" align="middle"><img src="http://img01.51jobcdn.com/im/2016/resume/man.png"
+                                                         width="85" height="104" class="head"></td>
+                    <td>
+                        <table cellspacing="0" cellpadding="0" border="0" class="infr">
+                            <tbody>
+                            <tr>
+                                <td colspan="2" class="name">黄金灿</td>
+                                <td align="right" class="icard">
+                                    ID:311004430
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
+                                    <img class="vam" src="http://img01.51jobcdn.com/im/2016/resume/y1.png" width="20"
+                                         height="20">试用期中，目前正在找工作
+                                </td>
+                                <td valign="top">
+                                    <img class="vam" src="http://img01.51jobcdn.com/im/2016/resume/y2.png" width="20"
+                                         height="20">13433979203
+                                </td>
+                                <td valign="top">
+                                    <table cellspacing="0" cellpadding="0" border="0" class="email">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" width="25"><img class="vam"
+                                                                             src="http://img01.51jobcdn.com/im/2016/resume/y3.png"
+                                                                             width="20" height="20"></td>
+                                            <td valign="top" class="txt4">497838208@qq.com</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" colspan="3"><p><img class="vam"
+                                                                     src="http://img01.51jobcdn.com/im/2016/resume/y4.png"
+                                                                     width="20" height="20">男<span class="p5">|</span>25
+                                    岁 (1991/12/08)<span class="p5">|</span>现居住广州-白云区<span class="p5">|</span>3年工作经验
+                                </p></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box2">
+                <tbody>
+                <tr>
+                    <td class="tba">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                            <tr>
+                                <td valign="top" class="tb2">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead style="height:0">
+                                        <tr>
+                                            <td valign="top" class="keys"></td>
+                                            <td valign="top" class="txt2"></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td colspan="2" class="plate2">最近工作</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" class="keys">职位：</td>
+                                            <td valign="top" class="txt2">Web前端开发</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" class="keys">公司：</td>
+                                            <td valign="top" class="txt2">广州瓷肌有限公司</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" class="keys">行业：</td>
+                                            <td valign="top" class="txt2">互联网/电子商务</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td valign="top" class="tb2">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead style="height:0">
+                                        <tr>
+                                            <td valign="top" class="keys"></td>
+                                            <td valign="top" class="txt2"></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td colspan="2" class="plate2">最高学历/学位</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" class="keys">专业：</td>
+                                            <td valign="top" class="txt2">计算机工程</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" class="keys">学校：</td>
+                                            <td valign="top" class="txt2">广东轻工职业技术学院</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" class="keys">学历/学位：</td>
+                                            <td valign="top" class="txt2">大专</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box">
+                <tbody>
+                <tr>
+                    <td class="plate1">
+                        目前年收入
+                        <span>&nbsp;12万元</span><span class="f12">（包含基本工资、补贴、奖金、股权收益等）</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box">
+                <tbody>
+                <tr>
+                    <td class="plate1">求职意向</td>
+                </tr>
+                <tr>
+                    <td class="tba">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                            <tr>
+                                <td class="tb1" colspan="2">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead style="height:0">
+                                        <tr>
+                                            <td valign="top" class="keys"></td>
+                                            <td valign="top" class="txt1"></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="keys">个人标签：</td>
+                                            <td valign="top" class="txt1">
+                                                <span class="tag">html5&nbsp;</span><span
+                                                    class="tag">css3&nbsp;</span><span
+                                                    class="tag">vue全家桶&nbsp;</span><span
+                                                    class="tag">模块化&nbsp;</span><span
+                                                    class="tag">jQuery&nbsp;</span><span
+                                                    class="tag">原生javascript&nbsp;</span><span
+                                                    class="tag">webpack&nbsp;</span><span class="tag">gulp</span>
+                                                    <span class="tag">elementUI</span>
+                                                    <span class="tag">three.js</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tb2" valign="top">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="keys">期望薪资：</td>
+                                            <td valign="top" class="txt2">10000-14999
+                                                元/月
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td class="tb2" valign="top">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="keys">地点：</td>
+                                            <td valign="top" class="txt2"><span class="tag">广州</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tb2" valign="top">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="keys">职能：</td>
+                                            <td valign="top" class="txt2"><span class="tag">Web前端开发</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td class="tb2" valign="top">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="keys">行业：</td>
+                                            <td valign="top" class="txt2"><span class="tag">计算机软件</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tb2" valign="top">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="keys">到岗时间：</td>
+                                            <td valign="top" class="txt2">1周内</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td class="tb2" valign="top">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="keys">工作类型：</td>
+                                            <td valign="top" class="txt2">全职</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tb1" colspan="2">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead style="height:0">
+                                        <tr>
+                                            <td valign="top" class="keys"></td>
+                                            <td valign="top" class="txt1"></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="keys">自我评价：</td>
+                                            <td valign="top" class="txt1">
+                                                精通HTML+CSS网页布局与样式，了解HTML5与CSS3.0，掌握css预处理器框架Less；<br>精通原生Javascript，能脱离jQuery等类库编码；<br>熟练掌握knockout、vue等js框架，能运用模块化、面向对象的方式编程；<br>熟练使用gulp、webpack自动化构建工具；<br>开发过功能全面的基础类库，如vk.js；<br>自主学习能力强，善于思考问题，寻求各种方式解决问题。<br>个人博客：<a
+                                                    href="https://home.cnblogs.com/u/wobushijincan/">https://home.cnblogs.com/u/wobushijincan/</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box">
+                <tbody>
+                <tr>
+                    <td class="plate1">工作经验</td>
+                </tr>
+                <tr>
+                    <td class="tbb">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td class="p15 con">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="time">2017/8-2017/12</td>
+                                            <td valign="top" class="rtbox">
+                                                <strong class="txt3">试用期</strong><span
+                                                    class="p5">|</span><span>运维产品部</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="phd tb1" colspan="2">
+                                                <span>上海新炬网络科技有限公司</span><span class="gray">&nbsp;[4个月]
                     </span>
-</td></tr>
-<tr><td class="phd tb1 gray2" colspan="2">互联网/电子商务<span class="p5">|</span>1000-5000人<span class="p5">|</span>民营公司</td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">工作描述：</td>
-<td valign="top" class="txt1">工作初期负责PC及移动端产品的专题、活动促销页面的制作，后期负责编写基础库组件，并负责网站的编写和维护。<br>主要项目：<br>1、瓷肌商城手机官网：http://q1.chinaskin.cn/、http://m.chinaskin.net/<br>2、tms文章发布系统：tms.fmkeji.com<br>3、瓷肌医生：www.chinaskin.cc<br>4、赴韩整形无线端：http://4ever.chinaskin.cn/<br>5、基于es6+vue+router+resource+webpack开发新站（new2.3g.chinaskin.cn）;<br>6、维护官网以及推广网站：www.chinaskin.cn/www.baifuni.net</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2014/12-2016/3</td>
-<td valign="top" class="rtbox">
-<strong class="txt3">web前端工程师</strong><span class="p5">|</span><span>技术中心</span>
-</td>
-</tr>
-<tr><td class="phd tb1" colspan="2">
-<span>汇志（中国）媒体传播机构</span><span class="gray">&nbsp;[1年3个月]
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="phd tb1 gray2" colspan="2">计算机软件<span
+                                                    class="p5">|</span>500-1000人<span class="p5">|</span>民营公司
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">工作描述：</td>
+                                                        <td valign="top" class="txt1">1.负责公司各项目的迭代维护和需求更新；&#x20;<br>2.公司的可视化大屏的制作。&#x20;<br>3.旧项目从svn上面迁移至git版本（vue）。&#x20;<br>重点在于：重度vuex，&#x20;快速，&#x20;模块开发
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p15">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="time">2016/3-至今</td>
+                                            <td valign="top" class="rtbox">
+                                                <strong class="txt3">Web前端开发</strong><span class="p5">|</span><span>网站前端组</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="phd tb1" colspan="2">
+                                                <span>广州瓷肌有限公司</span><span class="gray">&nbsp;[1年4个月]
                     </span>
-</td></tr>
-<tr><td class="phd tb1 gray2" colspan="2">公关/市场推广/会展<span class="p5">|</span>150-500人<span class="p5">|</span>民营公司</td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">工作描述：</td>
-<td valign="top" class="txt1">1、开发pc官网：http://www.topnews9.com/<br>2、数据价值网：http://www.dtvalue.com/<br>3、基于微信开发常规展示类H5、定制化移动H5、抢红包等小游戏<br>4、微商城</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2014/1-2014/12</td>
-<td valign="top" class="rtbox">
-<strong class="txt3">Web前端开发工程师</strong><span class="p5">|</span><span>产品研发</span>
-</td>
-</tr>
-<tr><td class="phd tb1" colspan="2">
-<span>广州董易奇文化交流服务有限公司</span><span class="gray">&nbsp;[11个月]
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="phd tb1 gray2" colspan="2">互联网/电子商务<span class="p5">|</span>1000-5000人<span
+                                                    class="p5">|</span>民营公司
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">工作描述：</td>
+                                                        <td valign="top" class="txt1">
+                                                            工作初期负责PC及移动端产品的专题、活动促销页面的制作，后期负责编写基础库组件，并负责网站的编写和维护。<br>主要项目：<br>1、瓷肌商城手机官网：http://q1.chinaskin.cn/、http://m.chinaskin.net/<br>2、tms文章发布系统：tms.fmkeji.com<br>3、瓷肌医生：www.chinaskin.cc<br>4、赴韩整形无线端：http://4ever.chinaskin.cn/<br>5、基于es6+vue+router+resource+webpack开发新站（new2.3g.chinaskin.cn）;<br>6、维护官网以及推广网站：www.chinaskin.cn/www.baifuni.net
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p15 con">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="time">2014/12-2016/3</td>
+                                            <td valign="top" class="rtbox">
+                                                <strong class="txt3">web前端工程师</strong><span class="p5">|</span><span>技术中心</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="phd tb1" colspan="2">
+                                                <span>汇志（中国）媒体传播机构</span><span class="gray">&nbsp;[1年3个月]
                     </span>
-</td></tr>
-<tr><td class="phd tb1 gray2" colspan="2">影视/媒体/艺术/文化传播<span class="p5">|</span>50-150人<span class="p5">|</span>民营公司</td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">工作描述：</td>
-<td valign="top" class="txt1">1．二次开发：http://www.yiqibazi.com/<br>2．二次开发：http://baobao.sjzyxh.com/?from=yiqibazi<br>3．二次开发：http://jixiangwu.sjzyxh.com/?from=yiqibazi；<br>4、开发专题活动（类似于）：http://www.yiqibazi.com/topic/2015/zeji.html</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2013/9-2014/1</td>
-<td valign="top" class="rtbox">
-<strong class="txt3">实习生</strong><span class="p5">|</span><span>技术部</span>
-</td>
-</tr>
-<tr><td class="phd tb1" colspan="2">
-<span>广州途乐科技有限公司</span><span class="gray">&nbsp;[4个月]
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="phd tb1 gray2" colspan="2">公关/市场推广/会展<span class="p5">|</span>150-500人<span
+                                                    class="p5">|</span>民营公司
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">工作描述：</td>
+                                                        <td valign="top" class="txt1">
+                                                            1、开发pc官网：http://www.topnews9.com/<br>2、数据价值网：http://www.dtvalue.com/<br>3、基于微信开发常规展示类H5、定制化移动H5、抢红包等小游戏<br>4、微商城
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p15 con">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="time">2014/1-2014/12</td>
+                                            <td valign="top" class="rtbox">
+                                                <strong class="txt3">Web前端开发工程师</strong><span class="p5">|</span><span>产品研发</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="phd tb1" colspan="2">
+                                                <span>广州董易奇文化交流服务有限公司</span><span class="gray">&nbsp;[11个月]
                     </span>
-</td></tr>
-<tr><td class="phd tb1 gray2" colspan="2">计算机软件<span class="p5">|</span>50-150人<span class="p5">|</span>民营公司</td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">工作描述：</td>
-<td valign="top" class="txt1">1、负责公司各项目的页面制作及页面维护；&#x20;<br>2.与设计师和后台程序配合，高效率高质量地完成页面的实现工作。&#x20;<br>3.根据用户的需求,分析并给出最优的前台技术解决方案。&#x20;<br>4.基于Javascript框架的应用和项目开发。&#x20;<br>重点在于：CSS样式，&#x20;布局，&#x20;色彩，JavaScript</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-</table></td></tr>
-</tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box"><tbody>
-<tr><td class="plate1">项目经验</td></tr>
-<tr><td class="tba"><table cellspacing="0" cellpadding="0" border="0">
-<tr><td class="p15"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2016/7-2016/12</td>
-<td valign="top" class="rtbox"><strong>tms文章发布系统</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">所属公司：</td>
-<td valign="top" class="txt1">广州瓷肌有限公司</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">项目描述：</td>
-<td valign="top" class="txt1">该系统是面向内部使用，用于快速搭建web页面，类似于易企秀之类，主要是开发给设计师使用，以便于简单、轻松制作基于HTML5的精美手机幻灯片页面。主要用到了knockout框架。<br>项目预览地址：tms.fmkeji.com</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">责任描述：</td>
-<td valign="top" class="txt1">tms集成了样式、组件、动画、交互模块，我主要负责添加组件部分和参与界面布局及交互（主要是qq渠道和qq管理这块耗时较多）。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2016/5-至今</td>
-<td valign="top" class="rtbox"><strong>官网重构</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">所属公司：</td>
-<td valign="top" class="txt1">广州瓷肌有限公司</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">项目描述：</td>
-<td valign="top" class="txt1">网站前身是用php后端渲染的，后来重构改版，改成基于vue(1.0)+vue-route+resource+vuex+webpack搭建，实现了前后端分离。<br>旧网站预览地址：http://m.chinaskin.net<br>新项目预览地址：http://q.chinaskin.cn</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">责任描述：</td>
-<td valign="top" class="txt1">主要负责网站的商品搜索、订单评价、购物车、会员中心、退换货流程、追评模块<br>1、商品搜索：可以根据用户输入实时筛选出商品列表<br>2、购物车：这部分业务流程比较复杂，有多种入口添加购物车方式，用vuex状态统一管理方式。<br>3、追加评价：针对多个产品，以及返回的产品快递信息来处理是否已经评价了、是否能追评、已经追评审核显示在详情页等等模块。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2014/6-至今</td>
-<td valign="top" class="rtbox"><strong>vk.js</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">所属公司：</td>
-<td valign="top" class="txt1">广州瓷肌有限公司</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">项目描述：</td>
-<td valign="top" class="txt1">这个js库主要封装了一些常用的操作，是参考jq编写的，使用的方法也类似jq。大部分自己写，也有部分参考了其他代码。方便调用。<br>项目地址：https://github.com/wobushijincan/vk.js</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">责任描述：</td>
-<td valign="top" class="txt1">vk.js是我业余时候学习原生js自己整出来的。这个与jq的区别在于它兼容PC和无线端，增加了自定义的tap事件，解决手机点击300ms延迟问题，封装一些常用事件等等。因为想到jq考虑的比较全面，但实际上一般的开发项目又不会用到那么多的引申，所以自己精简了一下。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-</table></td></tr>
-</tbody></table>
-<table xmlns="" class="box"><tbody>
-<tr><td class="plate1">教育经历</td></tr>
-<tr><td class="tba"><table cellspacing="0" cellpadding="0" border="0"><tr><td class="p15"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2011/9-2014/6</td>
-<td valign="top" class="rtbox"><strong>广东轻工职业技术学院</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2">大专<span class="p5">|</span>计算机工程</td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">专业描述：</td>
-<td valign="top" class="txt1">C语言编程、java语言编程、javaweb编程、android编程、网页设计、ps操作与配色、脚本语言javascript，极限编程<br>参与的项目有：<br>2013/09&#x20;--&#x20;2013/12：天下纵横定位系统（android语言）<br>2012/09&#x20;--&#x20;2013/02：网上购物商城（javaweb语言）<br>2012/03&#x20;--&#x20;2012/07：植物大战僵尸（java语言）<br>2011/09&#x20;--&#x20;2012/01：学生信息管理系统（C语言）<br>多次参加学校软件开发小组，以及校内最炫网页比赛。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr></table></td></tr>
-</tbody></table>
-</td></tr></tbody></table></body></html>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="phd tb1 gray2" colspan="2">影视/媒体/艺术/文化传播<span class="p5">|</span>50-150人<span
+                                                    class="p5">|</span>民营公司
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">工作描述：</td>
+                                                        <td valign="top" class="txt1">
+                                                            1．二次开发：http://www.yiqibazi.com/<br>2．二次开发：http://baobao.sjzyxh.com/?from=yiqibazi<br>3．二次开发：http://jixiangwu.sjzyxh.com/?from=yiqibazi；<br>4、开发专题活动（类似于）：http://www.yiqibazi.com/topic/2015/zeji.html
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box">
+                <tbody>
+                <tr>
+                    <td class="plate1">项目经验</td>
+                </tr>
+                <tr>
+                    <td class="tba">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td class="p15">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="time">2016/7-2016/12</td>
+                                            <td valign="top" class="rtbox"><strong>tms文章发布系统</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">所属公司：</td>
+                                                        <td valign="top" class="txt1">广州瓷肌有限公司</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">项目描述：</td>
+                                                        <td valign="top" class="txt1">
+                                                            该系统是面向内部使用，用于快速搭建web页面，类似于易企秀之类，主要是开发给设计师使用，以便于简单、轻松制作基于HTML5的精美手机幻灯片页面。主要用到了knockout框架。<br>项目预览地址：tms.fmkeji.com
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">责任描述：</td>
+                                                        <td valign="top" class="txt1">
+                                                            tms集成了样式、组件、动画、交互模块，我主要负责添加组件部分和参与界面布局及交互（主要是qq渠道和qq管理这块耗时较多）。
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p15 con">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="time">2016/5-2017/8</td>
+                                            <td valign="top" class="rtbox"><strong>官网重构</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">所属公司：</td>
+                                                        <td valign="top" class="txt1">广州瓷肌有限公司</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">项目描述：</td>
+                                                        <td valign="top" class="txt1">
+                                                            网站前身是用php后端渲染的，后来重构改版，改成基于vue(1.0)+vue-route+resource+vuex+webpack搭建，实现了前后端分离。<br>旧网站预览地址：http://m.chinaskin.net<br>新项目预览地址：http://q.chinaskin.cn
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">责任描述：</td>
+                                                        <td valign="top" class="txt1">
+                                                            主要负责网站的商品搜索、订单评价、购物车、会员中心、退换货流程、追评模块<br>1、商品搜索：可以根据用户输入实时筛选出商品列表<br>2、购物车：这部分业务流程比较复杂，有多种入口添加购物车方式，用vuex状态统一管理方式。<br>3、追加评价：针对多个产品，以及返回的产品快递信息来处理是否已经评价了、是否能追评、已经追评审核显示在详情页等等模块。
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p15 con">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="time">2014/6-至今</td>
+                                            <td valign="top" class="rtbox"><strong>vk.js</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">所属公司：</td>
+                                                        <td valign="top" class="txt1">广州瓷肌有限公司</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">项目描述：</td>
+                                                        <td valign="top" class="txt1">
+                                                            这个js库主要封装了一些常用的操作，是参考jq编写的，使用的方法也类似jq。大部分自己写，也有部分参考了其他代码。方便调用。<br>项目地址：https://github.com/wobushijincan/vk.js
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">责任描述：</td>
+                                                        <td valign="top" class="txt1">
+                                                            vk.js是我业余时候学习原生js自己整出来的。这个与jq的区别在于它兼容PC和无线端，增加了自定义的tap事件，解决手机点击300ms延迟问题，封装一些常用事件等等。因为想到jq考虑的比较全面，但实际上一般的开发项目又不会用到那么多的引申，所以自己精简了一下。
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table xmlns="" class="box">
+                <tbody>
+                <tr>
+                    <td class="plate1">教育经历</td>
+                </tr>
+                <tr>
+                    <td class="tba">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td class="p15">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td valign="top" class="time">2011/9-2014/6</td>
+                                            <td valign="top" class="rtbox"><strong>广东轻工职业技术学院</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">大专<span class="p5">|</span>计算机工程</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb1" colspan="2">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td valign="top" class="keys">专业描述：</td>
+                                                        <td valign="top" class="txt1">
+                                                            C语言编程、java语言编程、javaweb编程、android编程、网页设计、ps操作与配色、脚本语言javascript，极限编程<br>参与的项目有：<br>2013/09&#x20;--&#x20;2013/12：天下纵横定位系统（android语言）<br>2012/09&#x20;--&#x20;2013/02：网上购物商城（javaweb语言）<br>2012/03&#x20;--&#x20;2012/07：植物大战僵尸（java语言）<br>2011/09&#x20;--&#x20;2012/01：学生信息管理系统（C语言）<br>多次参加学校软件开发小组，以及校内最炫网页比赛。
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
